@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product Details</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/productdetails.css">
+       <link rel="shortcut icon" href="assets/images/favicon.PNG"/>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" defer></script>
+       <script type="module" src="assets/mains/detail.js" defer></script>   
+         <script src="assets/js/productdetails.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="head">
+            <div class="logo" style="position: relative;">
+                <a title="QubAngelStoreStore"  href="index.html"><img  alt="QubAngelStoreStore" src="assets/images/logonew.png" height="100" /></a>
+            </div>
+            <div class="top-menu">
+                <ul class="nav_menu">
+                    
+                    <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
+                        <a class="nav-l"  href="login.html"><img width="30" height="30"
+                            id="nav-user-img" 
+                         src="assets/images/no_login_v1.png"></a>
+                    </li>
+                    
+                    <li class="nav_menu-item locale-change"><a href="javascript:void(0)"
+                         class="nav-l flag-country flag-country_h  flag_country_h_en  ">
+                            EN
+                    </a>
+                        
+                        <ul class="nav_submenu nav_submenu-r nav_lang">
+                            <li class="nav_submenu-item">
+                                <div class="menu_list">
+                                    <div class="menu_body">
+                                        <ul>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_us" href="login.html" hreflang="en"> English</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_br" href="#" hreflang="pt"> Português</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_es" href="#" hreflang="es"> Español</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ru" href="#" hreflang="ru-RU"> Pусский</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_sa" href="#" hreflang="ar"> العربية‎</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_cn" href="#" hreflang="zh-CN"> 中文(简体)</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tw" href="#" hreflang="zh-TW"> 中文(繁體)</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_in" href="#" hreflang="hi"> हिन्दी</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_id" href="#" hreflang="id"> Indonesia</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_it" href="#" hreflang="it-IT"> Italiano</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_nl" href="#" hreflang="nl"> Nederlands</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_jp" href="#" hreflang="ja"> 日本語</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_pl" href="#" hreflang="pl"> Polski</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_de" href="#" hreflang="de-DE"> Deutsch</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_vn" href="#" hreflang="vi-VN"> Tiếng Việt</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_fr" href="#" hreflang="fr-FR"> Français</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tr" href="#" hreflang="tr-TR"> Türkiye</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_kr" href="#" hreflang="ko-KR"> 한국어</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ms" href="#" hreflang="ms-MY"> Malaysia</a></li>
+                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate QubAngelStoreStore</a></li>
+                                            </ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </li>
+                        
+                    <li class="nav_menu-item">
+                        <div class="top-search">
+                            <form class="formsearch" method="get" action="/search">
+                                <div class="search-left"><input class="autocomplete" autocomplete="off" title="Enter App Name, Package Name, Package ID" name="q" type="text" size="40" placeholder="Search..." required/></div>
+                                <div class="search-right"><input class="si" type="submit" value="" /></div>
+                            </form>
+                       </div>
+                    </li>
+                    
+
+                    <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-p"><img src="assets/images/nav_product_icon.png" style="padding:0px 0px 7px 0px">PRODUCTS</a>
+                        <ul class="nav_submenu">
+                            <li class="nav_submenu-item">
+                                <div class="menu_list">
+                                    <div class="menu_body">
+                                    <ul>
+                                        <li><a class="dl-ref" dl-ref="nav" href="products/QubAngelApp.html">QubAngelStore App</a></li>
+                                        <li><a href="products/QubInstall.html">Qub Install</a></li>
+                                        <li><a href="products/QubDownload.html">Qub Download</a></li>
+                                        <li><a href="products/QubVerification.html">Qub Verification</a></li>
+                                        <li><a href="#" target="_blank">iPhone APP</a></li>
+                                        <li><a href="#" target="_blank">YaksGames</a></li>
+                                        <li><a href="products/TencentGamingBuddy.html">Tencent Gaming Buddy</a></li>
+                                        <li><a href="products/BlueStacksAppPlayer.html">BlueStacks App Player</a></li>
+                                    </ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-t"><img src="assets/images/nav_topic_icon.png" style="padding:0px 0px 7px 0px">Topics</a>
+                        <ul class="nav_submenu">
+                            <li class="nav_submenu-item">
+                                <div class="menu_list">
+                                    <div class="menu_body">
+                                        <ul>
+                                            <li><a href="topics/DiscoverApp.html">Discover App</a></li>
+                                            <li><a href="topics/EditorChoice.html">Editor's Choice</a></li>
+                                            <li><a href="topics/Pre-Register.html">Pre-register</a></li>
+                                            <li><a href="topics/GameOnSales.html">Game on sales</a></li>
+                                            <li><a class="h" href="../topics/MoreTopics.html">More Topics</a></li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav_menu-item" ><a title="hot android app qub" href="apps.html" class="nav-a"><img src="assets/images/nav_app_icon.png" style="padding:0px 0px 7px 0px">APPS</a></li>
+                    <li class="nav_menu-item"><a title="hot android game qub" href="games.html" class="nav-g"><img src="assets/images/nav_game_icon.png" style="padding:0px 0px 7px 0px">GAMES</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="main page-q" data-type="pkg" data-pkg="com.roblox.client" style=" margin-top:20px;" itemscope itemtype="http://schema.org/MobileApplication">
+	<div class="left">
+            <div class="ad-box-auto" style="height:90px">
+                <!-- detail_horizontal -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-6440728838366015"
+                data-ad-slot="7932477794"
+                data-ad-format="horizontal"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </div>
+            
+        
+		<div class="box">
+			<div class="title bread-crumbs">
+                <a href="index.html">Home</a> » <a href="games.html">Games</a> » <a href="games.html">Adventure</a> » <span itemprop="name">Demo</span>
+                <div class="addthis-menu share-hide">
+                    <a class="addthis-custom"></a>
+                </div>
+            </div>
+			<dl class="ny-dl ny-dl-n">
+				<dt>
+                    <div class="icon"><img title="" id="d_image" alt="Roblox icon" srcset="https://image.winudf.com/v2/image1/Y29tLnJvYmxveC5jbGllbnRfaWNvbl8xNTczNDk3NzcxXzA5NA/icon.png?w=340&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLnJvYmxveC5jbGllbnRfaWNvbl8xNTczNDk3NzcxXzA5NA/icon.png?w=170&amp;fakeurl=1"></div>
+                </dt>
+                <dd>
+                    <div class="title-like">
+                        <h1 id="d_title">Roblox</h1>
+                    </div>
+                    <div>
+                        Downloads(  <span id="d_downloads"></span> )
+                    </div>
+                    <!-- <div class="details-sdk"><span id="d_version" itemprop="version">2.475.420862 </span>for Android</div> -->                    <div class="details-rating">
+                        
+                        <div class="stars" title="average: 8.3 out of 10">
+                            <span class="score" style="width:83%"></span>
+                        </div>
+                        
+                        <div class="rating-info">
+                            
+                            
+                                <span class="rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                    <span class="average" itemprop="ratingValue">8.3</span>
+                                    
+                                    <meta itemprop="ratingCount" content="5380" />
+                                    <meta itemprop="bestRating" content="10" />
+                                    <meta itemprop="worstRating" content="1"/>
+                                    
+                                </span>
+                            
+                            <span class="details-delimiter"> | </span>
+                            <a href="#comment" class="details-to-bottom" data-type="reviews">5.4k Reviews</a>
+                            <span class="details-delimiter"> | </span>
+                            
+                            <a href="#comment" class="details-to-bottom" data-type="posts">1.6k Posts</a>
+                        </div>
+                    </div>
+                    <div class="details-author">
+                        <p itemprop="publisher">
+                            
+                                <a id="d_text" title="" href="#">Roblox Corporation</a>
+                            
+                        </p>
+                    </div>
+                    
+                    <div class="ny-down">
+                                 
+                      <a class=" da" title="" id="c_file_down" >Download<span class="fsize">(<span id="d_size"></span>)</span></a>
+                    
+                        <span itemscope itemprop="offers" itemtype="https://schema.org/Offer"><meta itemprop="price" content="0.00"/><meta itemprop="priceCurrency" content="USD"/></span>
+                      
+                            <a title="Roblox Previous Versions" href="/roblox/com.roblox.client/versions" class="ny-versions">Versions</a>
+                            <a rel="nofollow" title="Roblox safe verified" data-fancybox data-type="iframe" href="/faq-safe.html" class="safe popsafe-open"><img alt="Roblox safe verified" src="assets/images/icon-verified_v2.png" width="16"></a>
+                        
+                    </div>
+                    
+                    
+                    
+                        
+                            <div class="details-how">
+                                <a href="/roblox/com.roblox.client/versions">This release comes in several variants</a>
+                            </div>
+                        
+                    
+                    
+                </dd>
+            </dl>
+              <div class="aegon-link">
+                <a class="dl-ref" dl-ref="detail" rel="nofollow" title="Using QubAngelStore App to upgrade Roblox, fast, free and save your internet data." href="">
+                    <img src="assets/images/favicon.png" width="24" height="24">Using QubAngelStore App to upgrade <strong id="_upgrade">Roblox</strong>, fast, free and save your internet data.
+                </a>
+            </div>
+            <div class="describe">
+                <div class="describe-line"></div>
+                <div class="describe-img">
+                <div id="slide-box">
+                    <div class="det-pic-out">
+                        <ul class="pa det-pic-list" style="left: 0px;">
+                            <li class="amagnificpopup" id="myimage">
+                                <!-- <a class="details-tube ga myimage" ga="youtube|click|com.roblox.client" title="Roblox for Android official Trailer" data-fancybox="com.roblox.client" href="javascript:void(0)" data-src="https://www.youtube.com/embed/T_rkoL9vt3g?ps=play&vq=large&rel=0&autohide=1&showinfo=0&autoplay=1" id="_images" >
+                                    <div class="play"></div>
+                                </a>
+                                
+                                
+                                <a class="mpopup" data-fancybox="com.roblox.client" style="" target="_blank" href="https://image.winudf.com/v2/image1/Y29tLnJvYmxveC5jbGllbnRfc2NyZWVuXzBfMTYxOTExNjcwOV8wMDU/screen-0.jpg?fakeurl=1&amp;type=.jpg" title="Roblox poster">
+                                    <img alt="Roblox poster" srcset="https://image.winudf.com/v2/image1/Y29tLnJvYmxveC5jbGllbnRfc2NyZWVuXzBfMTYxOTExNjcwOV8wMDU/screen-0.jpg?h=710&amp;fakeurl=1&amp;type=.jpg 2x" src="https://image.winudf.com/v2/image1/Y29tLnJvYmxveC5jbGllbnRfc2NyZWVuXzBfMTYxOTExNjcwOV8wMDU/screen-0.jpg?h=355&amp;fakeurl=1&amp;type=.jpg" height="355">
+                                </a> -->
+                                
+                                
+                             
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" class="det-pic-control" id="prev" go=""></a>
+                    <a href="javascript:void(0)" class="det-pic-control go" id="next" go=""></a>
+                </div>
+                </div>
+                <div class="describe-line"></div>
+                
+                
+<div id="describe">
+<div class="description">
+<h2 id="_description">The description of Roblox App</h2>
+<div class="content" id="desc" itemprop="description" >Join the community of 6 million monthly players and explore amazing worlds from 3D multiplayer games (shooter, RPG, MMO) to interactive adventures where friends construct lumber mills, or build and fly spaceships.  Welcome to the ultimate virtual universe powered by imagination where anyone can create adventures, play games, role play, and learn with their friends.<p>GAME EXAMPLES<br>- Play paintball with your friends<br>- Run a pizza shop<br>- Explore other galaxies<br>- Outmaneuver enemy jets<br>- Battle pirates<br>- Race opponents through obstacle courses<br>- Combat zombies<br>- Star in a fashion show<br>- Hang out with your friends in a virtual club</p><p>FEATURES<br>- Massive multi-player gaming platform<br>- Thousands of games to choose from<br>- Customizable characters<br>- Enabled message and chat features<br>- Free to download, with in-app purchases</p><p><br>PLEASE NOTE<br>ROBLOX is free to download and install. However, some game items can also be purchased with real money. A network connection is required to play and ROBLOX games work best over wifi.</p><p>ALREADY HAVE AN ACCOUNT?<br>Login to your existing Roblox account and play on the go!</p><p class="MsoNormal"><span lang="EN-US" style="font-weight: bold;">FAQs of ROBLOX.<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-weight: bold;"><span lang="EN-US">1.<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--></span><span lang="EN-US"><span style="font-weight: bold;">Why can't I login to my
+account?</span><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">Reset your time and zone. Check if your computer's clock is
+currently accurate. As strange as it may seem, the computer's clock being a
+little off can lead to various issues. <o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span style="font-weight: bold;"><span lang="EN-US">2.<span style="font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--></span><span lang="EN-US"><span style="font-weight: bold;">General Connection Problems and
+what to do.</span><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">Connection
+Problems:<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">ROBLOX
+has trouble with or fails to load online games, sometimes showing the player an
+error message (which can include "Could Not Connect" or "ID=17
+Failure" messages).<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">Loading
+screen on the website takes a long time or never finishes to load.<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">Player
+can visit games in the Build or Edit modes, but not in Play mode.<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">Games
+randomly or consistently tell you that they have shut down.<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">What to
+do?<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">Check
+your wireless connection<o:p></o:p></span></p><p>
+
+</p><p class="MsoListParagraph" style="margin-left:18.0pt"><span lang="EN-US">Reinstall
+ROBLOX.<o:p></o:p></span></p><p><br></p></div>
+                    </div>
+                </div>
+                
+                <div class="showmore_trigger">
+                    <div class="show-more-end"></div>
+                    <span>Show More</span>
+                </div>
+                
+                <script type="text/javascript">var description_translation = '';</script>
+                
+                
+                <div class="describe-line"></div>
+                <div class="describe-whatnew" id="whatsnew">
+                    <h2 id="h2id">Roblox App 2.475.420862 Update</h2>
+                    <p id="created">2021-04-22</p>
+                    <p id="short_desc">To make Roblox work better for you, we deliver updates regularly. These updates include bug fixes and improvements for speed and reliability.</p>
+                </div>
+                
+            </div>
+			<div class="clear"></div>
+            
+            
+<div class="describe-line"></div>
+<div class="tag">
+    <h2 id="tag">Roblox Tags</h2>
+    <div class="tag_wrap">
+        <ul class="tag_list">
+            
+            <li><a href="/tag/Adventure">Adventure</a></li>
+            
+            <li><a href="/tag/Creativity">Creativity</a></li>
+            
+            <li><a href="/tag/Multiplayer">Multiplayer</a></li>
+            
+            <li><a href="/tag/Online">Online</a></li>
+            
+            <li><a href="/tag/Level%20Customization">Level Customization</a></li>
+            
+            <li><a href="/tag/Pixel">Pixel</a></li>
+            
+            <li class="tag_add"></li>
+        </ul>
+    </div>
+</div>
+<div class="mfp-hide mfp-with-anim pre_pop_ca pre_pop pre_pop_pre_tag">
+    <div class="floatl">
+        <img src="">
+    </div>
+    <div class="floatl pr">
+        <div>
+            <div class="tit">Add Tags</div>
+            <p class="info">By adding tag words that describe for Games&Apps, you're helping to make these Games and Apps be more discoverable by other QubAngelStore users.</p>
+            <div class="down">
+                
+                <a class="dl-ref" dl-ref="profile" title="DownloadPure latest version" href="">Download<span class="fsize">(<span>14.3 MB</span>)</span></a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+            <div class="describe-line"></div>
+            <div class="additional">
+                <h2>Additional App Information</h2>
+                <ul>
+                    <li>
+                        <p><strong>Category:</strong></p>
+                        <p><a title="Download more Adventure games" href="games.html"><span id="cate">Free</span> <span id="subcate">Adventure Game</span></a></p>
+                        
+                        <meta itemprop="applicationCategory" content="Game"/>
+                        <meta itemprop="applicationSubCategory" content="Adventure"/>
+                        
+                    </li>
+                    <li>
+                        <p><strong>Latest Version:</strong></p>
+                        <p id="l_version">2.475.420862<a title="Request Roblox Update" rel="nofollow" class="requestupdate ga" ga="requpdate|click|com.roblox.client" target="_blank" href="https://www.facebook.com"><img alt="Request Roblox Update" src="assets/images/requestupdate.png" width="16" height="16"></a></p>
+                    </li>
+                    <li>
+                        <p><strong>Publish Date:</strong></p>
+                        
+                        <p itemprop="datePublished" id="datePublished">2021-04-22</p>
+                        
+                    </li>
+
+                    
+                    <li>
+                        <p><strong >App uploaded by:</strong></p>
+                        
+                        <p id="uploadedby">Ahmed Gamal</p>
+                        
+                    </li>      
+                    <li>
+                        <p><strong>Available on:</strong></p>
+                        
+                        <p><a class="ga" ga="get_it_on|click|com.roblox.client" title="Get Roblox on Google Play" rel="nofollow" 
+                            href="https://play.google.com/store/apps/details?id=com.roblox.client" target="_blank"><img alt="Get Roblox on Google Play" src="assets/images/gp_logo.png" height="16" /></a></p>
+                        
+                    </li>
+                    
+                    <li>
+                        <p><strong >Requirements:</strong></p>
+                        <p id="requirements">Android 4.4+</p>
+                        <meta itemprop="operatingSystem" content="ANDROID"/>
+                        
+                    </li>
+                    <li>
+                        <p><strong>Report:</strong></p>
+                        <p><a rel="nofollow" href="/report-content.html?pkg=com.roblox.client" target="_blank">Flag as inappropriate</a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+		</div>
+        
+            
+            
+            <div class="box" style="overflow: hidden; padding-bottom: 20px">
+                <div style="color: #555; text-align: center; padding-top: 10px;">Advertisement</div>
+                <div style="margin: 0 15px;">
+                    <!-- detail_link -->
+                    <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-6440728838366015"
+                            data-ad-slot="3762862992"
+                            data-ad-format="link"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            
+        
+        
+        
+        <div class="anchor-download"><a name="download" id="download">&nbsp;</a></div>
+        <div class="ver-title">
+            <div class="tit">Previous versions</div>
+            <div class="more"><a href="#">More &raquo;</a></div>
+        </div>
+        <div class="ver">
+            <ul class="ver-wrap">
+                
+                    
+                    
+
+                    
+     
+                           
+                    
+                    
+                           <li>
+    <a title="Download Roblox v2.474.420873 for android" href="">
+        <div class="ver-item">
+            <div class="ver-item-wrap">
+                <span class="ver-item-n">V2.474.420873</span>
+                <span class="ver-item-s">99.1 MB</span>
+                <span class="ver-item-t ver-apk"></span>
+                
+                
+            </div>
+            <div class="ver-item-a">
+                <p>Roblox</p>
+                <p class="update-on">2021-04-16</p>
+            </div>
+            <i class="ver-item-d"></i>
+
+            
+            <i role="button" aria-label="Version Info" class="ver-item-m pop" data-p="com.roblox.client" data-vid="6079ef43335d7a04d0400459" data-lang="en-US"></i>
+            
+        </div>
+    </a>
+    
+<div class="ver-info">
+    <div class="ver-info-top"><strong>Roblox</strong> 2.474.420873 (961)</div>
+    <div class="ver-info-m">
+        <p><strong>Update on: </strong>2021-04-16</p>
+        
+            
+             <p><strong>App uploaded by: </strong>Ahmed Gamal</p>
+            
+        
+        <p><strong>Requires Android: </strong>Android 4.4+ (Kitkat, API 19)</p>
+        <p><strong>Signature: </strong>f450e842186fe75cfeb0ad887ea95f8d98383b38
+            
+            <a rel="nofollow" title="Roblox 2.474.420873(961) safe verified" href="/faq-safe.html" class="safe-link-version popsafe-open" data-fancybox data-type="iframe"><img alt="Roblox 2.474.420873(961) safe verified" src="assets/images/icon-verified_v2.png" width="16"></a>
+            
+        </p>
+        <p><strong>Screen DPI: </strong>120-640dpi</p>
+        <p><strong>Architecture: </strong>arm64-v8a</p>
+        
+        
+        <p><strong>File SHA1: </strong>7da68077b99aa8c9e70f4ac175d78d9e09e7ed1d</p>
+        <p><strong>File Size: </strong>99.1 MB</p>
+        
+        <p><strong>What's new: </strong></p>
+        <div class="ver-whats-new v6079ef43335d7a04d0400459"></div>
+        
+        <p><a class=" down" href="">Download</a></p>
+    </div>
+</div>
+
+
+</li>
+                    
+                    
+                
+                    
+                    
+                           <li>
+    <a title="Download Roblox v2.474.420553 for android" href="">
+        <div class="ver-item">
+            <div class="ver-item-wrap">
+                <span class="ver-item-n">V2.474.420553</span>
+                <span class="ver-item-s">99.5 MB</span>
+                <span class="ver-item-t ver-xapk"></span>
+                <span class="ver-item-t"></span>
+                
+            </div>
+            <div class="ver-item-a">
+                <p>Roblox</p>
+                <p class="update-on">2021-04-15</p>
+            </div>
+            <i class="ver-item-d"></i>
+
+            
+            <i role="button" aria-label="Version Info" class="ver-item-m pop" data-p="com.roblox.client" data-vid="60786ce2335d7a36d73f8c8b" data-lang="en-US"></i>
+            
+        </div>
+    </a>
+    
+<div class="ver-info">
+    <div class="ver-info-top"><strong>Roblox</strong> 2.474.420553 (958)</div>
+    <div class="ver-info-m">
+        <p><strong>Update on: </strong>2021-04-15</p>
+        
+            
+             <p><strong>App uploaded by: </strong>Lovequyen Cintaly</p>
+            
+        
+        <p><strong>Requires Android: </strong>Android 4.4+ (Kitkat, API 19)</p>
+        <p><strong>Signature: </strong>f450e842186fe75cfeb0ad887ea95f8d98383b38
+            
+            <a rel="nofollow" title="Roblox 2.474.420553(958) safe verified" href="/faq-safe.html" class="safe-link-version popsafe-open" data-fancybox data-type="iframe"><img alt="Roblox 2.474.420553(958) safe verified" src="assets/images/icon-verified_v2.png" width="16"></a>
+            
+        </p>
+        <p><strong>Screen DPI: </strong>120-640dpi</p>
+        <p><strong>Architecture: </strong>arm64-v8a</p>
+        
+        
+          <p><strong>Base QubAngelStore: </strong>com.roblox.client.QubAngelStore</p>
+            <p><strong>Split QubAngelStore: </strong>config.arm64_v8a</p>
+        
+        <p><strong>File SHA1: </strong>0866062feb535bf78ac9ec10b15c100c62673e56</p>
+        <p><strong>File Size: </strong>99.5 MB</p>
+        
+        <p><strong>What's new: </strong></p>
+        <div class="ver-whats-new v60786ce2335d7a36d73f8c8b"></div>
+        
+        <p><a class=" down" href="">Download</a></p>
+    </div>
+</div>
+
+
+</li>
+                    
+                    
+                    
+                
+                    
+                    
+                           <li>
+    <a title="Download Roblox v2.472.420209 for android" href="">
+        <div class="ver-item">
+            <div class="ver-item-wrap">
+                <span class="ver-item-n">V2.472.420209</span>
+                <span class="ver-item-s">99.0 MB</span>
+                <span class="ver-item-t ver-xapk"></span>
+                <span class="ver-item-t"></span>
+                
+            </div>
+            <div class="ver-item-a">
+                <p>Roblox</p>
+                <p class="update-on">2021-04-07</p>
+            </div>
+            <i class="ver-item-d"></i>
+
+            
+            <i role="button" aria-label="Version Info" class="ver-item-m pop" data-p="com.roblox.client" data-vid="606de2e5335d7a08ac39955b" data-lang="en-US"></i>
+            
+        </div>
+    </a>
+    
+<div class="ver-info">
+    <div class="ver-info-top"><strong>Roblox</strong> 2.472.420209 (952)</div>
+    <div class="ver-info-m">
+        <p><strong>Update on: </strong>2021-04-07</p>
+        
+            
+             <p><strong>App uploaded by: </strong>Ahmed Gamal</p>
+            
+        
+        <p><strong>Requires Android: </strong>Android 4.4+ (Kitkat, API 19)</p>
+        <p><strong>Signature: </strong>f450e842186fe75cfeb0ad887ea95f8d98383b38
+            
+            <a rel="nofollow" title="Roblox 2.472.420209(952) safe verified" href="/faq-safe.html" class="safe-link-version popsafe-open" data-fancybox data-type="iframe"><img alt="Roblox 2.472.420209(952) safe verified" src="assets/images/icon-verified_v2.png" width="16"></a>
+            
+        </p>
+        <p><strong>Screen DPI: </strong>120-640dpi</p>
+        <p><strong>Architecture: </strong>arm64-v8a</p>
+        
+        
+            <p><strong>Base QubAngelStore: </strong>com.roblox.client.QubAngelStore</p>
+            <p><strong>Split QubAngelStore: </strong>config.arm64_v8a</p>
+        
+        <p><strong>File SHA1: </strong>44eeba7b24bc7df7e776e28cedbd12e1fca3a545</p>
+        <p><strong>File Size: </strong>99.0 MB</p>
+        
+        <p><strong>What's new: </strong></p>
+        <div class="ver-whats-new v606de2e5335d7a08ac39955b"></div>
+        
+        <p><a class=" down" href="">Download</a></p>
+    </div>
+</div>
+
+
+</li>
+                    
+                    
+                    
+            </ul>
+            <div class="clear"></div>
+        </div>
+        
+        
+        
+        
+<div class="box">
+	<div class="title">
+        <div class="smalltit">Similar to Roblox</div>
+        <div class="more"><a title="Similar to Roblox" href="games.html">More &raquo;</a></div>
+    </div>
+    <ul class="top-list">
+		
+            
+
+
+
+		
+            
+
+
+<li class="w33">
+    <dl>
+        <dt><a title="Blockman Go" target="_blank" href="/blockman-go/com.sandboxol.blockymods"><img alt="Blockman Go" data-srcset="https://image.winudf.com/v2/image1/Y29tLnNhbmRib3hvbC5ibG9ja3ltb2RzX2ljb25fMTU1NzMzMzY3NF8wNTc/icon.png?w=150&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLnNhbmRib3hvbC5ibG9ja3ltb2RzX2ljb25fMTU1NzMzMzY3NF8wNTc/icon.png?w=75&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+        <dd class="title-dd"> <a target="_blank" title="Blockman Go" href="/blockman-go/com.sandboxol.blockymods">Blockman Go</a></dd>
+        <dd>
+            <div class="stars"><span class="score" title="Blockman Go average rating 8.8" style="width:88.00000000000001%"></span><span class="star">8.8</span></div>
+        </dd>
+        <dd>Blockman GO Studio</dd>
+        <dd class="down"><a rel="nofollow" class="" title="Download Blockman Go latest version " href="/blockman-go/com.sandboxol.blockymods/download?from=details%2Fsimilar">Download</a></dd>
+    </dl>
+</li>
+
+
+		
+            
+
+
+<li class="w33">
+    <dl>
+        <dt><a title="LokiCraft" target="_blank" href="/lokicraft/com.ua.building.Lokicraft"><img alt="LokiCraft" data-srcset="https://image.winudf.com/v2/image1/Y29tLnVhLmJ1aWxkaW5nLkxva2ljcmFmdF9pY29uXzE1OTA5MzgzMDBfMDc4/icon.png?w=150&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLnVhLmJ1aWxkaW5nLkxva2ljcmFmdF9pY29uXzE1OTA5MzgzMDBfMDc4/icon.png?w=75&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+        <dd class="title-dd"> <a target="_blank" title="LokiCraft" href="/lokicraft/com.ua.building.Lokicraft">LokiCraft</a></dd>
+        <dd>
+            <div class="stars"><span class="score" title="LokiCraft average rating 6.4" style="width:64%"></span><span class="star">6.4</span></div>
+        </dd>
+        <dd>akseno2</dd>
+        <dd class="down"><a rel="nofollow" class="" title="Download LokiCraft latest version" href="/lokicraft/com.ua.building.Lokicraft/download?from=details%2Fsimilar">Download</a></dd>
+    </dl>
+</li>
+
+
+		
+            
+
+
+<li class="w33">
+    <dl>
+        <dt><a title="MultiCraft" target="_blank" href="/multicraft-%E2%80%95-build-and-mine-%F0%9F%91%8D/com.multicraft.game"><img alt="MultiCraft" data-srcset="https://image.winudf.com/v2/image1/Y29tLm11bHRpY3JhZnQuZ2FtZV9pY29uXzE2MDg4MDE2NzZfMDA1/icon.png?w=150&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLm11bHRpY3JhZnQuZ2FtZV9pY29uXzE2MDg4MDE2NzZfMDA1/icon.png?w=75&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+        <dd class="title-dd"> <a target="_blank" title="MultiCraft" href="/multicraft-%E2%80%95-build-and-mine-%F0%9F%91%8D/com.multicraft.game">MultiCraft</a></dd>
+        <dd>
+            <div class="stars"><span class="score" title="MultiCraft ― Build and Mine! 👍 average rating 7.0" style="width:70%"></span><span class="star">7.0</span></div>
+        </dd>
+        <dd>OpenWorld Project</dd>
+        <dd class="down"><a rel="nofollow" class="" title="Download MultiCraft ― Build and Mine! 👍 latest version" href="/multicraft-%E2%80%95-build-and-mine-%F0%9F%91%8D/com.multicraft.game/download?from=details%2Fsimilar">Download</a></dd>
+    </dl>
+</li>
+
+
+		
+	</ul>
+	<div class="clear"></div>
+</div>
+
+
+        
+        
+
+        
+    <div class="box cmt-wrap" id="comment">
+        <div class="cmt-container"></div>
+        <div class="cmt-wrong"></div>
+        <div id="cmt-loading-first">
+            <div class="cssload-spin-box"></div>
+            <div class="cmt-loading-text">Comment Loading...</div>
+        </div>
+        <div class="cmt-no-posts" style="">Ooops! No such content!</div>
+    </div>
+
+
+	</div>
+    <div class="right">
+        
+        <div class="facebook-like">
+    
+    
+    <p class="social-network">
+        <a class="network fb" rel="nofollow noopener" target="_blank" href="https://www.facebook.com"><span>Facebook</span></a>
+        <a class="network tw" rel="nofollow noopener" target="_blank" href="https://twitter.com"><span>Twitter</span></a>
+        <a class="network glp" rel="nofollow noopener" target="_blank" href="https://www.youtube.com"><span>YouTube</span></a>
+    </p>
+</div>
+        
+            
+            
+            <div class="ad-box-auto">
+                <!-- detail_rectangle -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-6440728838366015"
+                data-ad-slot="7712985949"
+                data-ad-format="rectangle"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </div>
+            
+        
+        
+        
+<div class="box">
+	<div class="title">
+        <div class="tit">Discover App</div>
+        
+        <div class="more"><a href="/topics/DiscoverApp.html">More &raquo;</a></div>
+        
+    </div>
+	<ul class="index-left-ul index-left-ul-s">
+        
+
+<li>
+	<a href="/eternal-sword-m/com.emagroups.ea2" title="Eternal Sword M">
+		<div class="app-icon"><img alt="Eternal Sword M" data-srcset="https://image.winudf.com/v2/image1/Y29tLmVtYWdyb3Vwcy5lYTJfaWNvbl8xNTc5NTE0MzAyXzA2Mg/icon.png?w=140&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLmVtYWdyb3Vwcy5lYTJfaWNvbl8xNTc5NTE0MzAyXzA2Mg/icon.png?w=70&amp;fakeurl=1" src="assets/images/lazy.png"/></div>
+		<div class="app-text">
+			<p class="app-text-title mt-3">Eternal Sword M</p>
+			
+				
+					<p>1.7.0</p>
+					<p class="app-text-developer">NEOCRAFT LIMITED</p>
+				
+			
+		</div>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="/adobe-acrobat-reader-pdf-viewer-editor-creator/com.adobe.reader" title="Adobe Acrobat">
+		<div class="app-icon"><img alt="Adobe Acrobat" data-srcset="https://image.winudf.com/v2/image1/Y29tLmFkb2JlLnJlYWRlcl9pY29uXzE2MDM4MDgwMjVfMDE1/icon.png?w=140&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLmFkb2JlLnJlYWRlcl9pY29uXzE2MDM4MDgwMjVfMDE1/icon.png?w=70&amp;fakeurl=1" src="assets/images/lazy.png"/></div>
+		<div class="app-text">
+			<p class="app-text-title mt-3">Adobe Acrobat</p>
+			
+				
+					<p>21.4.0.17702</p>
+					<p class="app-text-developer">Adobe</p>
+				
+			
+		</div>
+	</a>
+</li>
+
+
+
+
+<li>
+	<a href="/google-meet-secure-video-meetings/com.google.android.apps.meetings" title="Google Meet - Secure Video Meetings">
+		<div class="app-icon"><img alt="Google Meet - Secure Video Meetings" data-srcset="https://image.winudf.com/v2/image1/Y29tLmdvb2dsZS5hbmRyb2lkLmFwcHMubWVldGluZ3NfaWNvbl8xNjAzODMwNDc2XzAwNg/icon.png?w=140&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLmdvb2dsZS5hbmRyb2lkLmFwcHMubWVldGluZ3NfaWNvbl8xNjAzODMwNDc2XzAwNg/icon.png?w=70&amp;fakeurl=1" src="assets/images/lazy.png"/></div>
+		<div class="app-text">
+			<p class="app-text-title mt-3">Google Meet - Secure Video Meetings</p>
+			
+				
+					<p>2021.04.05.367053214.Release</p>
+					<p class="app-text-developer">Google LLC</p>
+				
+			
+		</div>
+	</a>
+</li>
+
+
+
+
+<li>
+	<a href="/nitro-nation-drag-drift-car-racing/com.creativemobile.nno" title="Nitro Nation">
+		<div class="app-icon"><img alt="Nitro Nation" data-srcset="https://image.winudf.com/v2/image1/Y29tLmNyZWF0aXZlbW9iaWxlLm5ub19pY29uXzE2MTQzMzI4MTZfMDg5/icon.png?w=140&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLmNyZWF0aXZlbW9iaWxlLm5ub19pY29uXzE2MTQzMzI4MTZfMDg5/icon.png?w=70&amp;fakeurl=1" src="assets/images/lazy.png"/></div>
+		<div class="app-text">
+			<p class="app-text-title mt-3">Nitro Nation</p>
+			
+				
+					<p>6.15</p>
+					<p class="app-text-developer">Creative Mobile Games</p>
+				
+			
+		</div>
+	</a>
+</li>
+
+
+
+	</ul>
+	<div class="clear"></div>
+</div>
+
+        
+
+        
+        
+        
+<div class="box">
+	<div class="title">
+        <div class="tit">Popular Games In Last 24 Hours</div>
+    </div>
+	<ul class="day_list">
+        
+
+
+<li>
+	<div class="day_list_number">1</div>
+	<dl>
+		<dt><a title="PUBG MOBILE - KARAKIN" href="/pubg-mobile-4-android-i/com.tencent.ig"><img alt="PUBG MOBILE - KARAKIN" data-srcset="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdfaWNvbl8xNjA1NTExODU4XzA4OA/icon.png?w=120&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdfaWNvbl8xNjA1NTExODU4XzA4OA/icon.png?w=60&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+		<dd class="title-dd"><a title="PUBG MOBILE - KARAKIN" href="/pubg-mobile-4-android-i/com.tencent.ig">PUBG MOBILE - KARAKIN</a></dd>
+		<dd>1.3.1</dd>
+		<dd>Action</dd>
+		<dd class="down"><a rel="nofollow" class="" title="Download PUBG MOBILE - KARAKIN latest version" href="/pubg-mobile-4-android-i/com.tencent.ig/download?from=details%2Fside">Download</a></dd>
+	</dl>
+</li>
+
+
+
+
+<li>
+	<div class="day_list_number">2</div>
+	<dl>
+		<dt><a title="Digital World" href="/digital-world/com.hivgd.un"><img alt="Digital World" data-srcset="https://image.winudf.com/v2/user/admin/YWRtaW5fMS5wbmdfMTU1MDU0ODgzOTEwNQ/icon.png?w=120&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/user/admin/YWRtaW5fMS5wbmdfMTU1MDU0ODgzOTEwNQ/icon.png?w=60&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+		<dd class="title-dd"><a title="Digital World" href="/digital-world/com.hivgd.un">Digital World</a></dd>
+		<dd>1.0</dd>
+		<dd>Adventure</dd>
+		<dd class="down"><a rel="nofollow" class="" title="Download Digital World latest version" href="/digital-world/com.hivgd.un/download?from=details%2Fside">Download</a></dd>
+	</dl>
+</li>
+
+
+
+
+<li>
+	<div class="day_list_number">3</div>
+	<dl>
+		<dt><a title="PUBG MOBILE LITE" href="/pubg-lite-android/com.tencent.iglite"><img alt="PUBG MOBILE LITE" data-srcset="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdsaXRlX2ljb25fMTU4NDUwMDI1NV8wNDg/icon.png?w=120&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdsaXRlX2ljb25fMTU4NDUwMDI1NV8wNDg/icon.png?w=60&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+		<dd class="title-dd"><a title="PUBG MOBILE LITE" href="/pubg-lite-android/com.tencent.iglite">PUBG MOBILE LITE</a></dd>
+		<dd>0.21.0</dd>
+		<dd>Action</dd>
+		<dd class="down"><a rel="nofollow" class="" title="Download PUBG MOBILE LITE latest version" href="/pubg-lite-android/com.tencent.iglite/download?from=details%2Fside">Download</a></dd>
+	</dl>
+</li>
+
+
+
+
+<li>
+	<div class="day_list_number">4</div>
+	<dl>
+		<dt><a title="Garena Free Fire - The Cobra" href="/garena-free-fire-android-il/com.dts.freefireth"><img alt="Garena Free Fire - The Cobra" data-srcset="https://image.winudf.com/v2/image1/Y29tLmR0cy5mcmVlZmlyZXRoX2ljb25fMTYxOTQwMTA4OF8wMDg/icon.png?w=120&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLmR0cy5mcmVlZmlyZXRoX2ljb25fMTYxOTQwMTA4OF8wMDg/icon.png?w=60&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+		<dd class="title-dd"><a title="Garena Free Fire - The Cobra" href="/garena-free-fire-android-il/com.dts.freefireth">Garena Free Fire - The Cobra</a></dd>
+		<dd>1.60.1</dd>
+		<dd>Action</dd>
+		<dd class="down"><a rel="nofollow" class="" title="Download Garena Free Fire - The Cobra latest version " href="/garena-free-fire-android-il/com.dts.freefireth/download?from=details%2Fside">Download</a></dd>
+	</dl>
+</li>
+
+
+
+
+<li>
+	<div class="day_list_number">5</div>
+	<dl>
+		<dt><a title="Fate/Grand Order" href="/fate-grand-order/com.aniplex.fategrandorder"><img alt="Fate/Grand Order" data-srcset="https://image.winudf.com/v2/image1/Y29tLmFuaXBsZXguZmF0ZWdyYW5kb3JkZXJfaWNvbl8xNTU5MTEwMDk4XzAyMA/icon.png?w=120&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLmFuaXBsZXguZmF0ZWdyYW5kb3JkZXJfaWNvbl8xNTU5MTEwMDk4XzAyMA/icon.png?w=60&amp;fakeurl=1" src="assets/images/lazy.png"/></a></dt>
+		<dd class="title-dd"><a title="Fate/Grand Order" href="/fate-grand-order/com.aniplex.fategrandorder">Fate/Grand Order</a></dd>
+		<dd>2.32.2</dd>
+		<dd>Role Playing</dd>
+		<dd class="down"><a rel="nofollow" class="" title="Download Fate/Grand Order latest version" href="/fate-grand-order/com.aniplex.fategrandorder/download?from=details%2Fside">Download</a></dd>
+	</dl>
+</li>
+
+
+
+
+
+        
+        <div class="day_list_more"><a href="#">More &raquo;</a></div>
+        
+	</ul>
+	<div class="clear"></div>
+</div>
+
+        
+        
+    </div>
+	<div class="clear"></div>
+</div>
+
+<div  class="mfp-hide ver-popup"></div>
+
+
+<div class="clear" style="height:0px;"></div>
+<div class="footer">
+    <div class="footer-list">
+        <div class="main">
+            <div class="list" style="width: 350px;" >
+               
+                <div class="clear" style="height:10px;"></div>
+                <p>CUSTOMER SERVICE</p>
+                <ul>
+                    <li><a href="#">Submit APK</a></li>
+                    <li><a href="#" target="_blank">Developer Console</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Report abuse</a></li>
+                </ul>
+            </div>
+            <div class="list" style="width: 250px;">
+                <div class="clear" style="height:10px;"></div>
+                <p>FOLLOW US</p>
+                
+                <ul class="follow">
+                    <li><a class="fb" rel="nofollow noopener" target="_blank" href="https://www.facebook.com"><span>Facebook</span></a></li>
+                    <li><a class="tw" rel="nofollow noopener" target="_blank" href="https://twitter.com"><span>Twitter</span></a></li>
+                    <li><a class="glp" rel="nofollow noopener" target="_blank" href="https://www.youtube.com"><span>YouTube</span></a></li>
+                </ul>              
+            </div>
+           
+            <div class="list">
+                <div class="clear" style="height:10px;"></div>
+                <p>Top Developers & Partners</p>
+                <ul>
+                    <li><a href="#" target="_blank" title="Gameloft">Gameloft</a></li>
+                    <li><a href="#" target="_blank" title="Supercell">Supercell</a></li>
+                    <li><a href="#" target="_blank" title="NEXON">NEXON</a></li>
+                    <li><a href="#" target="_blank" title="BANDAI NAMCO Entertainment Inc.">BANDAI Inc.</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="copyright">
+        Copyright © 2021-2022 QubAngelStore All rights reserved.
+        | <a href="#" rel="nofollow">DMCA Disclaimer</a>
+        | <a href="#">Privacy Policy</a>
+        | <a href="#" rel="nofollow">Term of Use</a>
+      
+    </div>
+</div>
+
+<div class="share-fixed share-hide">
+    <div class="share-btn share-web">
+        <ul>
+            <li>
+                <a class="share-fb" data-sharer="facebook"><span class="icon"></span></a>
+            </li>
+            <li>
+                <a class="share-t" data-sharer="twitter"><span class="icon"></span></a>
+            </li>
+            <li>
+                <a class="share-reddit" data-sharer="reddit"><span class="icon"></span></a>
+            </li>
+            <li>
+                <a class="share-vk" data-sharer="vk"><span class="icon"></span></a>
+            </li>
+            <li>
+                <a class="share-whatsapp" data-sharer="whatsapp"><span class="icon"></span></a>
+            </li>
+            <li>
+                <a class="share-more"><span class="icon"></span></a>
+            </li>
+            <li>
+                <div class="share-side-counter"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
