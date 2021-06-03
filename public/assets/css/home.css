@@ -41,7 +41,7 @@ blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,
         display: none;
     }
     .left{
-        width: 100%;
+        width: 1048px;
     }
 }
 
@@ -51,6 +51,6 @@ blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,
         display: none;
     }
     .left{
-        width: 100%;
+        width: 1048px;
     }
 }
