@@ -4,14 +4,14 @@ const getAllApks = async () => {
     const { data } = await axios.get(`${url}/apk/approved`);
     console.log({ allApks: data.data });
 
-    data.data.map((apk) => {
-      const currentDate = new Date( apk.createdAt );
+    data.data.map((apk,index) => {
+      const currentDate = new Date(apk.createdAt);
       const currentDayOfMonth = currentDate.getDate();
       const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
       const currentYear = currentDate.getFullYear();
       const dateString = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
-     
-      if (apk.category === "Rhapsody Languages") {
+
+      if (apk.category === "Rhapsody Languages" && index<9) {
         const lis = ` 
           <dl>
               <dt><a ><img alt="image" src="${url}/img/${apk.image}"/></a></dt>
@@ -29,9 +29,9 @@ const getAllApks = async () => {
           window.location = "/ProductDetails.html?title=" + e.target.title;
         });
         document.querySelector(".c_Rhapsody").appendChild(li);
-         }
-         if (apk.category == "Pre register") {
-          const lis = ` 
+      }
+      if (apk.category == "Pre register" && index<9) {
+        const lis = ` 
 <a   title="${apk.title}">
     <dl>
         <dt><img alt="${apk.title}" src="${url}/img/${apk.image}" /></dt>
@@ -42,17 +42,17 @@ const getAllApks = async () => {
     </dl>
 </a>
           `;
-          const li = document.createElement("li");
-          li.setAttribute("class", "w33");
-          li.innerHTML = lis;
-          li.querySelector(".downs").addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location = "/ProductDetails.html?title=" + e.target.title;
-          });
-          document.querySelector(".c_preregister").appendChild(li);
-        console.log({name:apk.category});
+        const li = document.createElement("li");
+        li.setAttribute("class", "w33");
+        li.innerHTML = lis;
+        li.querySelector(".downs").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location = "/ProductDetails.html?title=" + e.target.title;
+        });
+        document.querySelector(".c_preregister").appendChild(li);
+        console.log({ name: apk.category });
       }
-      if (apk.category == "Game on sale") {
+      if (apk.category == "Game on sale" && index<9) {
         const lis = ` 
         <a  title="${apk.title}" >
             <dl>
@@ -76,10 +76,10 @@ const getAllApks = async () => {
           window.location = "/ProductDetails.html?title=" + e.target.title;
         });
         document.querySelector(".c_game_sale").appendChild(li);
-      // console.log({name:apk.category});
-    } 
-    if (apk.top&&apk.category==='Games') {
-      const lis = ` 
+        // console.log({name:apk.category});
+      }
+      if (apk.top && apk.category === 'Games'&& index<9) {
+        const lis = ` 
       <dl>
           <dt><a title="${apk.title}" ><img alt="${apk.title}" src="${url}/img/${apk.image}"></a></dt>
           <dd class="title-dd"><a title="${apk.title}" >${apk.title}</a></dd>
@@ -89,17 +89,17 @@ const getAllApks = async () => {
           <dd class="down "><a rel="nofollow" class="downs" title="${apk.title}" >Download</a></dd>
       </dl>
       `;
-      const li = document.createElement("li");
-      li.setAttribute("class", "w33");
-      li.innerHTML = lis;
-      li.querySelector(".downs").addEventListener("click", (e) => {
-        e.preventDefault();
-        window.location = "/ProductDetails.html?title=" + e.target.title;
-      });
-      document.querySelector(".c_top_games").appendChild(li);
-  } 
-  if (apk.top&&apk.category==='Apps') {
-    const lis = ` 
+        const li = document.createElement("li");
+        li.setAttribute("class", "w33");
+        li.innerHTML = lis;
+        li.querySelector(".downs").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location = "/ProductDetails.html?title=" + e.target.title;
+        });
+        document.querySelector(".c_top_games").appendChild(li);
+      }
+      if (apk.top && apk.category === 'Apps'&& index<9) {
+        const lis = ` 
     <dl>
         <dt><a title="${apk.title}" ><img alt="${apk.title}" src="${url}/img/${apk.image}"></a></dt>
         <dd class="title-dd"><a title="${apk.title}" >${apk.title}</a></dd>
@@ -109,17 +109,17 @@ const getAllApks = async () => {
         <dd class="down "><a rel="nofollow" class="downs" title="${apk.title}" >Download</a></dd>
     </dl>
     `;
-    const li = document.createElement("li");
-    li.setAttribute("class", "w33");
-    li.innerHTML = lis;
-    li.querySelector(".downs").addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location = "/ProductDetails.html?title=" + e.target.title;
-    });
-    document.querySelector(".c_top_apps").appendChild(li);
-} 
-if (apk.hot&&apk.category==='Games') {
-  const lis = ` 
+        const li = document.createElement("li");
+        li.setAttribute("class", "w33");
+        li.innerHTML = lis;
+        li.querySelector(".downs").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location = "/ProductDetails.html?title=" + e.target.title;
+        });
+        document.querySelector(".c_top_apps").appendChild(li);
+      }
+      if (apk.hot && apk.category === 'Games'&& index<9) {
+        const lis = ` 
     <div class="day_list_number">1</div>
     <dl>
         <dt><a title="${apk.title}" ><img alt="${apk.title}"  src="${url}/img/${apk.image}"></a></dt>
@@ -129,16 +129,16 @@ if (apk.hot&&apk.category==='Games') {
         <dd class="down downs"><a rel="nofollow" class="" title="${apk.title}">Download</a></dd>
     </dl>
   `;
-  const li = document.createElement("li");
-  li.innerHTML = lis;
-  li.querySelector(".downs").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location = "/ProductDetails.html?title=" + e.target.title;
-  });
-  document.querySelector(".c_hot_games").appendChild(li);
-} 
-if (apk.hot&&apk.category==='Apps') {
-const lis = ` 
+        const li = document.createElement("li");
+        li.innerHTML = lis;
+        li.querySelector(".downs").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location = "/ProductDetails.html?title=" + e.target.title;
+        });
+        document.querySelector(".c_hot_games").appendChild(li);
+      }
+      if (apk.hot && apk.category === 'Apps'&& index<9) {
+        const lis = ` 
 <div class="day_list_number">1</div>
 <dl>
     <dt><a title="${apk.title}" ><img alt="${apk.title}"  src="${url}/img/${apk.image}"></a></dt>
@@ -148,16 +148,16 @@ const lis = `
     <dd class="down downs"><a rel="nofollow" class="" title="${apk.title}">Download</a></dd>
 </dl>
 `;
-const li = document.createElement("li");
-li.innerHTML = lis;
-li.querySelector(".downs").addEventListener("click", (e) => {
-  e.preventDefault();
-  window.location = "/ProductDetails.html?title=" + e.target.title;
-});
-document.querySelector(".c_hot_apps").appendChild(li);
-} 
-if (apk.editorChoice) {
-  const lis=`
+        const li = document.createElement("li");
+        li.innerHTML = lis;
+        li.querySelector(".downs").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location = "/ProductDetails.html?title=" + e.target.title;
+        });
+        document.querySelector(".c_hot_apps").appendChild(li);
+      }
+      if (apk.editorChoice && index<9) {
+        const lis = `
   <a  title="${apk.title}"   >
       <div class="wrap">
           <div class="icon">
@@ -172,16 +172,16 @@ if (apk.editorChoice) {
       </div>
   </a>
  `
-  const li = document.createElement("li");
-  li.innerHTML = lis;
-  li.querySelector(".downs").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location = "/ProductDetails.html?title=" + e.target.title;
-  });
-  document.querySelector(".c_editor_coice").appendChild(li);
-  }
+        const li = document.createElement("li");
+        li.innerHTML = lis;
+        li.querySelector(".downs").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location = "/ProductDetails.html?title=" + e.target.title;
+        });
+        document.querySelector(".c_editor_coice").appendChild(li);
+      }
 
-     if (apk.category === "Apps") {
+      if (apk.category === "Apps" && index<9) {
         const lis = ` 
           <dl>
               <dt><a ><img alt="English" src="${url}/img/${apk.image}" width="100px" height="100px"/></a></dt>
@@ -191,7 +191,6 @@ if (apk.editorChoice) {
               <dd class="down"><a rel="nofollow" class="downs" title="${apk.title}" href="#">Download</a></dd>
           </dl>
         `;
-
         const li = document.createElement("li");
         li.setAttribute("class", "w33");
         li.innerHTML = lis;
@@ -212,8 +211,9 @@ const getAPapular = async () => {
   try {
     const { data } = await axios.get(`${url}/apk/papular`);
     console.log({ papular_apps: data.data });
-    data.data.map((apk) => {
-      const currentDate = new Date( apk.createdAt );
+    data.data.map((apk,index) => {
+      if (index<9) {
+      const currentDate = new Date(apk.createdAt);
       const currentDayOfMonth = currentDate.getDate();
       const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
       const currentYear = currentDate.getFullYear();
@@ -236,6 +236,7 @@ const getAPapular = async () => {
         window.location = "/ProductDetails.html?title=" + e.target.title;
       });
       document.querySelector(".c_popular").appendChild(li);
+    }
     });
   } catch (error) {
     console.log(error);
@@ -247,13 +248,13 @@ const getTrending = async () => {
   try {
     const { data } = await axios.get(`${url}/apk/trend`);
     console.log({ papular_apps: data.data });
-    data.data.map((apk) => {
-      const currentDate = new Date( apk.createdAt );
+    data.data.map((apk,index) => {
+      if (index<9) {
+      const currentDate = new Date(apk.createdAt);
       const currentDayOfMonth = currentDate.getDate();
       const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
       const currentYear = currentDate.getFullYear();
       const dateString = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
-     
       const lis = ` 
           <dl>
               <dt><a ><img alt="English" src="${url}/img/${apk.image}" /></a></dt>
@@ -263,7 +264,6 @@ const getTrending = async () => {
               <dd class="down"><a rel="nofollow" class="downs" title="${apk.title}" href="#">Download</a></dd>
           </dl>
         `;
-
       const li = document.createElement("li");
       li.setAttribute("class", "w33");
       li.innerHTML = lis;
@@ -272,6 +272,7 @@ const getTrending = async () => {
         window.location = "/ProductDetails.html?title=" + e.target.title;
       });
       document.querySelector(".c_trending").appendChild(li);
+    }
     });
   } catch (error) {
     console.log(error);
@@ -283,21 +284,49 @@ const allSliders = async () => {
   try {
     const { data } = await axios.get(`${url}/apk/activesliders`);
     console.log({ papular_apps: data.data });
-    data.data.map((apk,index) => {
+    data.data.map((apk, index) => {
       const image = `
      <a title="${apk.title}" ><img alt="${apk.title}" src="${url}/img/${apk.image}" width="100%" height="100%"/></a>
         `;
-        const lis=document.createElement('li');
-        const title=document.createElement('li');
-        title.innerText=apk.title;
-        lis.innerHTML=image;
-        document.querySelector("#slider_titles").appendChild(title);
-        document.querySelector("#slider_images").appendChild(lis);
-      });
+      const lis = document.createElement('li');
+      const title = document.createElement('li');
+      title.innerText = apk.title;
+      // lis.innerHTML=image;
+      // document.querySelector("#slider_titles").appendChild(title);
+      // document.querySelector("#slider_images").appendChild(lis);
+    });
   } catch (error) {
     console.log(error);
   }
 };
 allSliders();
 
+// const popular_cates=document.getElementById('popular_cates');
+// if (popular_cates) {
+//   popular_cates.addEventListener('load',e=>{
+//     e.preventDefault();
+// popularCates();    
+//   })
+// }
 
+async function popularCates() {
+  try {
+    const { data } = await axios.get(`${url}/apk/getallcate`);
+    console.log({ data });
+    data.data.map(cate => {
+      cate.subCategory.map(subCate => {
+        const lis = `<a class="downs" title="${subCate.name}" ><i class="action"></i>${subCate.name}</a>`;
+        const li = document.createElement("li");
+        li.innerHTML = lis;
+        li.querySelector(".downs").addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location = '/topics/DiscoverApp.html?title=' + e.target.title;
+        });
+        document.getElementById("popular_cates").appendChild(li);
+      })
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+popularCates();

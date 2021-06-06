@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <title>Sign up account of Qub-Store</title>
-    <link rel="stylesheet" href="assets/signup.css" />
+    <link rel="stylesheet" href="assets/css/signup.css" />
        <link rel="shortcut icon" href="assetsges/favicon.PNG"/>    
-    <script src="assetssignup.js" type="text/javascript"></script>   
+    <!-- <script src="assets/js/" type="text/javascript"></script>    -->
     <link rel="stylesheet" type="text/css" href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css" />
 </head>
 <body>
     <div class="header">
         <div class="head">
             <div class="logo" style="position: relative;">
-                <a title="Qub-Store" href="Home.html"><img alt="Qub-Store" src="assetsges/logonew.png" height="60" /></a>
+                <a title="Qub-Store" href="Home.html"><img alt="Qub-Store" src="assets/images/logonew.png" height="60" /></a>
             </div>
             <div class="top-menu">
                 <ul class="nav_menu">
@@ -19,7 +19,7 @@
                     <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
                         <a class="nav-l"  href="login.html"><img width="30" height="30"
                             id="nav-user-img" 
-                         src="assetsges/no_login_v1.png"></a>
+                         src="assets/images/no_login_v1.png"></a>
                     </li>
                     
                     <li class="nav_menu-item locale-change"><a href="javascript:void(0)"
@@ -71,7 +71,7 @@
                     </li>
                     
 
-                    <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-p"><img src="assetsges/nav_product_icon.png" style="padding:0px 0px 7px 0px">PRODUCTS</a>
+                    <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-p"><img src="assets/images/nav_product_icon.png" style="padding:0px 0px 7px 0px">PRODUCTS</a>
                         <ul class="nav_submenu">
                             <li class="nav_submenu-item">
                                 <div class="menu_list">
@@ -92,7 +92,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-t"><img src="assetsges/nav_topic_icon.png" style="padding:0px 0px 7px 0px">Topics</a>
+                    <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-t"><img src="assets/images/nav_topic_icon.png" style="padding:0px 0px 7px 0px">Topics</a>
                         <ul class="nav_submenu">
                             <li class="nav_submenu-item">
                                 <div class="menu_list">
@@ -110,8 +110,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav_menu-item" ><a title="hot android app qub" href="apps.html" class="nav-a"><img src="assetsges/nav_app_icon.png" style="padding:0px 0px 7px 0px">APPS</a></li>
-                    <li class="nav_menu-item"><a title="hot android game qub" href="games.html" class="nav-g"><img src="assetsges/nav_game_icon.png" style="padding:0px 0px 7px 0px">GAMES</a></li>
+                    <li class="nav_menu-item" ><a title="hot android app qub" href="apps.html" class="nav-a"><img src="assets/images/nav_app_icon.png" style="padding:0px 0px 7px 0px">APPS</a></li>
+                    <li class="nav_menu-item"><a title="hot android game qub" href="games.html" class="nav-g"><img src="assets/images/nav_game_icon.png" style="padding:0px 0px 7px 0px">GAMES</a></li>
                 </ul>
             </div>
         </div>
@@ -124,31 +124,31 @@
     <path d="M0,100 C15,100 35,50 50,50 L50,50 C65,50 85,100 100,100 Z"></path>
 </svg>
 <div class="cmt-popup">
-  <form  id="cmt-register-form" action="" onsubmit="return false">
+  <form  id="cmt-register-form" class="sign_up"  onsubmit="return false">
     <div class="cmt-popup-pad">
         <h2>Sign Up</h2>
     </div>
     <div class="cmt-popup-pad">
         <div class="input">
-            <input type="text" name="account" placeholder="Username" required>
+            <input type="text" name="account" id="username" placeholder="Username" required>
             <span class="cmt-input-bd"></span>
             <span class="cmt-input-bd-err"></span>
             <i class="iconfont icon-account"></i>
         </div>
         <div class="input">
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
             <span class="cmt-input-bd"></span>
             <span class="cmt-input-bd-err"></span>
             <i class="iconfont icon-email"></i>
         </div>
         <div class="input">
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
             <span class="cmt-input-bd"></span>
             <span class="cmt-input-bd-err"></span>
             <i class="iconfont icon-password"></i>
         </div>
         <div class="input">
-            <input type="password" name="password_r" placeholder="Confirm Password" required>
+            <input type="password" id="confirmPassword" name="password_r" placeholder="Confirm Password" required>
             <span class="cmt-input-bd"></span>
             <span class="cmt-input-bd-err"></span>
             <i class="iconfont icon-password"></i>
@@ -248,7 +248,10 @@
         </ul>
     </div>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+crossorigin="anonymous" defer></script>
+<script type="module" src="assets/mains/login.js"></script>
 </body>
 
 

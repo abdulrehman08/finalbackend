@@ -131,13 +131,13 @@
         </div>
         <div class="cmt-popup-pad">
             <div class="input">
-                <input type="text" name="account" placeholder="Username" required>
-                <span class="cmt-input-bd"></span>
+                <input type="text" id="username" name="account" placeholder="Username" required>
+                <span  class="cmt-input-bd"></span>
                 <span class="cmt-input-bd-err"></span>
                 <i class="iconfont icon-account"></i>
             </div>
             <div class="input">
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
                 <span class="cmt-input-bd"></span>
                 <span class="cmt-input-bd-err"></span>
                 <i class="iconfont icon-password"></i>
@@ -146,7 +146,7 @@
         </div>
         <div class="cmt-popup-error"></div>
         <div class="cmt-popup-pad">
-            <button type="submit" class="cmt-btn cmt-auth-submit">SIGN IN</button>
+            <button type="submit"  class="cmt-btn cmt-auth-submit">SIGN IN</button>
             <div class="cmt-pass-wrap">
                 <a href="RetrievePassword.html" rel="nofollow">Retrieve Password</a>
             </div>
@@ -156,7 +156,7 @@
             <a class="cmt-to-register" href="signup.html">New User Registration</a>
         </div>
         <br>
-        <div class="cmt-third">
+        <!-- <div class="cmt-third">
             <ul class="cmt-auth-third-menu">
                 <li class="cmt-auth-facebook">
                     <a href="javascript:void(0)" data-social="facebook"></a>
@@ -169,20 +169,17 @@
                 </li>
             </ul>
             <div class="clear"></div>
-        </div>
+        </div> -->
     </form>
     <div class="cmt-popup-loading">
         <div class="cssload-spin-box"></div>
     </div>
 </div>
-
-
 <div class="clear" style="height:0px;"></div>
 <div class="footer">
     <div class="footer-list">
         <div class="main">
-            <div class="list" style="width: 350px;" >
-               
+            <div class="list" style="width: 350px;" >               
                 <div class="clear" style="height:10px;"></div>
                 <p>CUSTOMER SERVICE</p>
                 <ul>
@@ -196,14 +193,12 @@
             <div class="list" style="width: 250px;">
                 <div class="clear" style="height:10px;"></div>
                 <p>FOLLOW US</p>
-                
                 <ul class="follow">
                     <li><a class="fb" rel="nofollow noopener" target="_blank" href="https://www.facebook.com"><span>Facebook</span></a></li>
                     <li><a class="tw" rel="nofollow noopener" target="_blank" href="https://twitter.com"><span>Twitter</span></a></li>
                     <li><a class="glp" rel="nofollow noopener" target="_blank" href="https://www.youtube.com"><span>YouTube</span></a></li>
                 </ul>              
-            </div>
-           
+            </div>           
             <div class="list">
                 <div class="clear" style="height:10px;"></div>
                 <p>Top Developers & Partners</p>
@@ -224,10 +219,8 @@
         | <a href="#" rel="nofollow">DMCA Disclaimer</a>
         | <a href="#">Privacy Policy</a>
         | <a href="#" rel="nofollow">Term of Use</a>
-      
     </div>
 </div>
-
 <div class="share-fixed share-hide">
     <div class="share-btn share-web">
         <ul>
@@ -255,5 +248,9 @@
         </ul>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+crossorigin="anonymous" defer></script>
+<script type="module" src="assets/mains/login.js"></script>
 </body>
 </html>
