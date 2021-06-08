@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Editor Choice App | Qub-Store</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/topics css/editorchoice.css">
+    <link rel="shortcut icon" href="../assets/images/logonew.png">
+    <script src="../assets/js/topics js/editorchoice.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css" />
+</head>
+<body>
+   
+    <div class="header">
+        <div class="head">
+            <div class="logo" style="position: relative;">
+                <a title="Qub-Store" href="../Home.html"><img alt="Qub-Store" src="../assets/images/logonew.png" height="60" /></a>
+            </div>
+            <div class="top-menu">
+                <ul class="nav_menu">
+                    <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
+                        <a class="nav-l"  href="../login.html"><img width="30" height="30"
+                            id="nav-user-img" 
+                         src="../assets/images/no_login_v1.png"></a>
+                    </li>
+                    
+                    <li class="nav_menu-item locale-change"><a href="javascript:void(0)"
+                         class="nav-l flag-country flag-country_h  flag_country_h_en  ">
+                            EN
+                    </a>
+                        
+                        <ul class="nav_submenu nav_submenu-r nav_lang">
+                            <li class="nav_submenu-item">
+                                <div class="menu_list">
+                                    <div class="menu_body">
+                                        <ul>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_us" href="login.html" hreflang="en"> English</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_br" href="#" hreflang="pt"> Português</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_es" href="#" hreflang="es"> Español</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ru" href="#" hreflang="ru-RU"> Pусский</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_sa" href="#" hreflang="ar"> العربية‎</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_cn" href="#" hreflang="zh-CN"> 中文(简体)</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tw" href="#" hreflang="zh-TW"> 中文(繁體)</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_in" href="#" hreflang="hi"> हिन्दी</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_id" href="#" hreflang="id"> Indonesia</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_it" href="#" hreflang="it-IT"> Italiano</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_nl" href="#" hreflang="nl"> Nederlands</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_jp" href="#" hreflang="ja"> 日本語</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_pl" href="#" hreflang="pl"> Polski</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_de" href="#" hreflang="de-DE"> Deutsch</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_vn" href="#" hreflang="vi-VN"> Tiếng Việt</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_fr" href="#" hreflang="fr-FR"> Français</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tr" href="#" hreflang="tr-TR"> Türkiye</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_kr" href="#" hreflang="ko-KR"> 한국어</a></li>
+                                            <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ms" href="#" hreflang="ms-MY"> Malaysia</a></li>
+                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub-Store</a></li>
+                                            </ul>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </li>
+                
+                
+                <li class="nav_menu-item">
+                    <div class="top-search">
+                        <form class="formsearch" method="get" action="/search">
+                            <div class="search-left"><input class="autocomplete" autocomplete="off" title="Enter App Name, Package Name, Package ID" name="q" type="text" size="40" placeholder="Search..." required/></div>
+                            <div class="search-right"><input class="si" type="submit" value="" /></div>
+                        </form>
+                    </div>
+                </li>
+                
+                <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-p"><img src="../assets/images/nav_product_icon.png" style="padding:0px 0px 7px 0px">PRODUCTS</a>
+                    <ul class="nav_submenu">
+                        <li class="nav_submenu-item">
+                            <div class="menu_list">
+                                <div class="menu_body">
+                                 <ul>
+                                        <li><a class="dl-ref" dl-ref="nav" href="../products/QubApp.html">Qub-Store App</a></li>
+                                        <li><a href="../products/QubInstall.html">Qub Install</a></li>
+                                        <li><a href="../products/QubDownload.html">Qub Download</a></li>
+                                        <li><a href="../products/QubVerification.html">Qub Verification</a></li>
+                                        <li><a href="#" target="_blank">iPhone APP</a></li>
+                                        <li><a href="#" target="_blank">YaksGames</a></li>
+                                        <li><a href="../products/TencentGamingBuddy.html">Tencent Gaming Buddy</a></li>
+                                        <li><a href="../products/BlueStacksAppPlayer.html">BlueStacks App Player</a></li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav_menu-item"><a href="javascript:void(0)" class="nav-t"><img src="../assets/images/nav_topic_icon.png" style="padding:0px 0px 7px 0px">Topics</a>
+                    <ul class="nav_submenu">
+                        <li class="nav_submenu-item">
+                            <div class="menu_list">
+                                <div class="menu_body">
+                                    <ul>
+                                        <li><a href="../topics/DiscoverApp.html">Discover App</a></li>
+                                        <li><a href="../topics/EditorChoice.html">Editor's Choice</a></li>
+                                        <li><a href="../topics/Pre-Register.html">Pre-register</a></li>
+                                        <li><a href="../topics/GameOnSales.html">Game on sales</a></li>
+                                        <li><a class="h" href="../topics/MoreTopics.html">More Topics</a></li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav_menu-item" ><a title="hot android app qub" href="../apps.html" class="nav-a"><img src="../assets/images/nav_app_icon.png" style="padding:0px 0px 7px 0px">APPS</a></li>
+                <li class="nav_menu-item"><a title="hot android game qub" href="../games.html" class="nav-g"><img src="../assets/images/nav_game_icon.png" style="padding:0px 0px 7px 0px">GAMES</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="main" style=" margin-top:20px;">
+    
+        <div class="main">
+    <div class="title bread-crumbs" style="margin-bottom: 20px;">
+        
+            <a href="">Home</a> » <span>Editor's Choice</span>
+        
+    </div>
+</div>
+    
+<div>
+        
+    <div class="box editors_m">
+        <div class="editors_m_1">
+            <p><a title="PUBG MOBILE LITE" href="/pubg-lite-android/com.tencent.iglite"><img alt="PUBG MOBILE LITE" srcset="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdsaXRlX2ljb25fMTU4NDUwMDI1NV8wNDg/icon.png?w=300&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdsaXRlX2ljb25fMTU4NDUwMDI1NV8wNDg/icon.png?w=150&amp;fakeurl=1" /></a></p>
+            
+            
+            <div class="topic-rating" title="average: 8.5 out of 10">
+                <div class="stars"><span class="score" style="width:85%"></span></div>
+                <div class="rating-info"> 8.5</div>
+            </div>
+            
+        </div>
+     
+        <div class="editors_m_2">
+            <h3 class="editors_title"><a title="Magic: The Gathering Arena" href="/magic-the-gathering-arena/com.wizards.mtga">Magic: The Gathering Arena <span class="vname">2021.4.10.662</span></a></h3>
+            <div class="editors_author"><div class="editors_date" title="Latest Update"><img src="" width="16"> 2021-04-15</div></div>
+            <div class="editors_text">WELCOME THE CHALLENGEYOUR GATEWAY TO MAGICYou know the name. Now download and play the original strategy card game on your phone. Unlock powerful decks right away, earn rewards just by playing, and jump into action with a variety of game formats for </div>
+            
+            <div class="tag_wrap">
+                <ul class="tag_list">
+                    
+                    <li><a href="/tag/Card">Card</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="editors_m_3">
+            <a title="Magic: The Gathering Arena" href="/magic-the-gathering-arena/com.wizards.mtga"><img src="" class="lazybg" data-srcset="https://image.winudf.com/v2/image1/Y29tLndpemFyZHMubXRnYV9iYW5uZXJfMTYxMTg1NTc2MV8wMjc/banner.jpg?w=852&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLndpemFyZHMubXRnYV9iYW5uZXJfMTYxMTg1NTc2MV8wMjc/banner.jpg?w=426&amp;fakeurl=1" /></a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="box editors_m">
+        <div class="editors_m_1">
+            <p><a title="Stickman Party: 1 2 3 4 Player Games Free" href="/stickman-party-1-2-3-4-player-games-free/com.PlayMax.playergames"><img alt="Stickman Party: 1 2 3 4 Player Games Free" srcset="https://image.winudf.com/v2/image1/Y29tLlBsYXlNYXgucGxheWVyZ2FtZXNfaWNvbl8xNjEyNzExOTE5XzAyNA/icon.png?w=300&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLlBsYXlNYXgucGxheWVyZ2FtZXNfaWNvbl8xNjEyNzExOTE5XzAyNA/icon.png?w=150&amp;fakeurl=1" /></a></p>
+            
+            
+            <div class="topic-rating" title="average: 8.7 out of 10">
+                <div class="stars"><span class="score" style="width:86.99999999999999%"></span></div>
+                <div class="rating-info"> 8.7</div>
+            </div>
+            
+        </div>
+        <div class="editors_m_2">
+            <h3 class="editors_title"><a title="Stickman Party: 1 2 3 4 Player Games Free" href="/stickman-party-1-2-3-4-player-games-free/com.PlayMax.playergames">Stickman Party: 1 2 3 4 Player Games Free <span class="vname">2.0.3</span></a></h3>
+            <div class="editors_author"><div class="editors_date" title="Latest Update"><img src="" width="16"> 2021-04-15</div></div>
+            <div class="editors_text">Stickman Party is a collection of singleplayer / local multiplayer games, including games for one player, 2 player games, 3, or even as many as 4 players on the same device (smartphone of tablet). In stickman games, the rules are very simple. You can</div>
+            
+            <div class="tag_wrap">
+                <ul class="tag_list">
+                    
+                    <li><a href="/tag/Arcade">Arcade</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="editors_m_3">
+            <a title="Stickman Party: 1 2 3 4 Player Games Free" href="/stickman-party-1-2-3-4-player-games-free/com.PlayMax.playergames"><img src="" class="lazybg" data-srcset="https://image.winudf.com/v2/image1/Y29tLlBsYXlNYXgucGxheWVyZ2FtZXNfYmFubmVyXzE1ODkzNDY4NTNfMDIx/banner.jpg?w=852&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLlBsYXlNYXgucGxheWVyZ2FtZXNfYmFubmVyXzE1ODkzNDY4NTNfMDIx/banner.jpg?w=426&amp;fakeurl=1" /></a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="box editors_m">
+        <div class="editors_m_1">
+            <p><a title="Cargo Simulator 2019: Turkey" href="/cargo-simulator-2019-turkey/com.smsoft.trucksimulatorturkey"><img alt="Cargo Simulator 2019: Turkey " srcset="https://image.winudf.com/v2/image1/Y29tLnNtc29mdC50cnVja3NpbXVsYXRvcnR1cmtleV9pY29uXzE1NTQ0Mzk1MjNfMDQ2/icon.png?w=300&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLnNtc29mdC50cnVja3NpbXVsYXRvcnR1cmtleV9pY29uXzE1NTQ0Mzk1MjNfMDQ2/icon.png?w=150&amp;fakeurl=1" /></a></p>
+            
+            
+            <div class="topic-rating" title="average: 8.7 out of 10">
+                <div class="stars"><span class="score" style="width:86.99999999999999%"></span></div>
+                <div class="rating-info"> 8.7</div>
+            </div>
+            
+        </div>
+        <div class="editors_m_2">
+            <h3 class="editors_title"><a title="Cargo Simulator 2019: Turkey" href="/cargo-simulator-2019-turkey/com.smsoft.trucksimulatorturkey">Cargo Simulator 2019: Turkey <span class="vname">1.61</span></a></h3>
+            <div class="editors_author"><div class="editors_date" title="Latest Update"><img src="" width="16"> 2021-04-15</div></div>
+            <div class="editors_text">Cargo Simulator 2019: Turkey is the first truck driving simulator that contains the real Turkey map and cities with scaled roads. You can have a unique driving experience with various trucks and trailers on an enormous map. Each delivery contributes </div>
+            
+            <div class="tag_wrap">
+                <ul class="tag_list">
+                    
+                    <li><a href="/tag/Simulation">Simulation</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="editors_m_3">
+            <a title="Cargo Simulator 2019: Turkey" href="/cargo-simulator-2019-turkey/com.smsoft.trucksimulatorturkey"><img src="" class="lazybg" data-srcset="https://image.winudf.com/v2/image1/Y29tLnNtc29mdC50cnVja3NpbXVsYXRvcnR1cmtleV9iYW5uZXJfMTU1NDQzOTU0M18wNzI/banner.jpg?w=852&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/Y29tLnNtc29mdC50cnVja3NpbXVsYXRvcnR1cmtleV9iYW5uZXJfMTU1NDQzOTU0M18wNzI/banner.jpg?w=426&amp;fakeurl=1" /></a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="box editors_m">
+        <div class="editors_m_1">
+            <p><a title="GFX Tool for PUBG - Game Launcher &amp; Optimizer" href="/gfx-tool-for-pubg-game-launcher-optimizer/eu.tsoml.graphicssettings"><img alt="GFX Tool for PUBG - Game Launcher &amp; Optimizer" srcset="https://image.winudf.com/v2/image1/ZXUudHNvbWwuZ3JhcGhpY3NzZXR0aW5nc19pY29uXzE2MTc5MDcwMDNfMDk5/icon.png?w=300&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/ZXUudHNvbWwuZ3JhcGhpY3NzZXR0aW5nc19pY29uXzE2MTc5MDcwMDNfMDk5/icon.png?w=150&amp;fakeurl=1" /></a></p>
+            
+            
+            <div class="topic-rating" title="average: 9.3 out of 10">
+                <div class="stars"><span class="score" style="width:93%"></span></div>
+                <div class="rating-info"> 9.3</div>
+            </div>
+            
+        </div>
+        <div class="editors_m_2">
+            <h3 class="editors_title"><a title="GFX Tool for PUBG - Game Launcher &amp; Optimizer" href="/gfx-tool-for-pubg-game-launcher-optimizer/eu.tsoml.graphicssettings">GFX Tool for PUBG - Game Launcher &amp; Optimizer <span class="vname">10.0.3</span></a></h3>
+            <div class="editors_author"><div class="editors_date" title="Latest Update"><img src="" width="16"> 2021-04-15</div></div>
+            <div class="editors_text">GFX Tool is a free utility launcher for specific games where you can fully customize the game graphics to get beautiful pictures and smooth gameplay.App features&#x2022; Change resolution&#x2022; Unlock HDR graphics and all FPS levels&#x2022; Fully control Anti-aliasing </div>
+            
+            <div class="tag_wrap">
+                <ul class="tag_list">
+                    
+                    <li><a href="/tag/Tools">Tools</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <div class="editors_m_3">
+            <a title="GFX Tool for PUBG - Game Launcher &amp; Optimizer" href="/gfx-tool-for-pubg-game-launcher-optimizer/eu.tsoml.graphicssettings"><img src="" class="lazybg" data-srcset="https://image.winudf.com/v2/image1/ZXUudHNvbWwuZ3JhcGhpY3NzZXR0aW5nc19iYW5uZXJfMTU4NzQ2MjM1N18wMTQ/banner.jpg?w=852&amp;fakeurl=1 2x" data-original="https://image.winudf.com/v2/image1/ZXUudHNvbWwuZ3JhcGhpY3NzZXR0aW5nc19iYW5uZXJfMTU4NzQ2MjM1N18wMTQ/banner.jpg?w=426&amp;fakeurl=1" /></a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+        </div>
+        
+    <div class="paging">
+        <ul>
+            
+            
+            
+            <li class="active"><a href="/discover?page=1">1</a></li>
+            
+            <li><a href="/discover?page=2">2</a></li>
+            
+            <li><a href="/discover?page=3">3</a></li>
+            
+            <li><a href="/discover?page=4">4</a></li>
+            
+            <li><a href="/discover?page=5">5</a></li>
+            
+            
+            
+            <li>...</li>
+            
+            <li><a href="/discover?page=621">621</a></li>
+            
+            
+            <li><a href="/discover?page=2">&#10095;</a></li>
+            
+        </ul>
+    </div>
+    
+        
+        <div class="box cmt-wrap" id="comment">
+            <div class="cmt-container"></div>
+            <div class="cmt-wrong"></div>
+            <div id="cmt-loading-first">
+                <div class="cssload-spin-box"></div>
+                <div class="cmt-loading-text">Comment Loading...</div>
+            </div>
+            <div class="cmt-no-posts" >Ooops! No such content!</div>
+        </div>
+    
+    
+    </div>
+    
+     
+    <div class="clear" style="height:0px;"></div>
+<div class="footer">
+    <div class="footer-list">
+        <div class="main">
+            <div class="list" style="width: 350px;" >
+               
+                <div class="clear" style="height:10px;"></div>
+                <p>CUSTOMER SERVICE</p>
+                <ul>
+                    <li><a href="#">Submit APK</a></li>
+                    <li><a href="#" target="_blank">Developer Console</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Report abuse</a></li>
+                </ul>
+            </div>
+            <div class="list" style="width: 250px;">
+                <div class="clear" style="height:10px;"></div>
+                <p>FOLLOW US</p>
+                
+                <ul class="follow">
+                    <li><a class="fb" rel="nofollow noopener" target="_blank" href="https://www.facebook.com"><span>Facebook</span></a></li>
+                    <li><a class="tw" rel="nofollow noopener" target="_blank" href="https://twitter.com"><span>Twitter</span></a></li>
+                    <li><a class="glp" rel="nofollow noopener" target="_blank" href="https://www.youtube.com"><span>YouTube</span></a></li>
+                </ul>              
+            </div>
+           
+            <div class="list">
+                <div class="clear" style="height:10px;"></div>
+                <p>Top Developers & Partners</p>
+                <ul>
+                    <li><a href="#" target="_blank" title="Gameloft">Gameloft</a></li>
+                    <li><a href="#" target="_blank" title="Supercell">Supercell</a></li>
+                    <li><a href="#" target="_blank" title="NEXON">NEXON</a></li>
+                    <li><a href="#" target="_blank" title="BANDAI NAMCO Entertainment Inc.">BANDAI Inc.</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="copyright">
+        Copyright © 2021-2022 Qub-Store All rights reserved.
+        | <a href="#" rel="nofollow">DMCA Disclaimer</a>
+        | <a href="#">Privacy Policy</a>
+        | <a href="#" rel="nofollow">Term of Use</a>
+      
+    </div>
+</div>
+    
+    <div class="share-fixed share-hide">
+        <div class="share-btn share-web">
+            <ul>
+                <li>
+                    <a class="share-fb" data-sharer="facebook"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <a class="share-t" data-sharer="twitter"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <a class="share-reddit" data-sharer="reddit"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <a class="share-vk" data-sharer="vk"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <a class="share-whatsapp" data-sharer="whatsapp"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <a class="share-more"><span class="icon"></span></a>
+                </li>
+                <li>
+                    <div class="share-side-counter"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript">
+        new LazyLoad({
+            elements_selector: '.topic-img,.lazybg',
+            data_src: "original",
+        });
+        var comment_config = {
+            page: {
+                categoryId: 'topic-trending',
+                title: document.title,
+                url:location.href
+            },
+            order: "default",
+            iapi_url:'',
+            template_language:'en'
+        };
+    </script>
+    
+    </body>
+    </html>

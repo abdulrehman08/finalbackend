@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Discover App | Qub-Store</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/css/topics css/discoverapp.css"
+    />
+   
+    <link rel="shortcut icon" href="../assets/images/favicon.PNG" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" defer></script>
+    <script type="module" src="../assets/mains/discover.js" defer></script>   
+ 
+    <script src="../assets/js/topics js/discoverapp.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="head">
+        <div class="logo" style="position: relative">
+          <a title="Qub-Store" href="../index.html"
+            ><img
+              alt="Qub-Store"
+              src="../assets/images/logonew.png" height="60"/></a>
+        </div>
+        <div class="top-menu">
+          <ul class="nav_menu">
+            <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
+              <a class="nav-l" href="../login.html"
+                ><img
+                  width="30"
+                  height="30"
+                  id="nav-user-img"
+                  src="../assets/images/no_login_v1.png"
+              /></a>
+            </li>
+
+            <li class="nav_menu-item locale-change">
+              <a
+                href="javascript:void(0)"
+                class="nav-l flag-country flag-country_h flag_country_h_en"
+              >
+                EN
+              </a>
+
+              <ul class="nav_submenu nav_submenu-r nav_lang">
+                <li class="nav_submenu-item">
+                  <div class="menu_list">
+                    <div class="menu_body">
+                      <ul>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_us"
+                            href="login.html"
+                            hreflang="en"
+                          >
+                            English</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_br"
+                            href="#"
+                            hreflang="pt"
+                          >
+                            Português</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_es"
+                            href="#"
+                            hreflang="es"
+                          >
+                            Español</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_ru"
+                            href="#"
+                            hreflang="ru-RU"
+                          >
+                            Pусский</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_sa"
+                            href="#"
+                            hreflang="ar"
+                          >
+                            العربية‎</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_cn"
+                            href="#"
+                            hreflang="zh-CN"
+                          >
+                            中文(简体)</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_tw"
+                            href="#"
+                            hreflang="zh-TW"
+                          >
+                            中文(繁體)</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_in"
+                            href="#"
+                            hreflang="hi"
+                          >
+                            हिन्दी</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_id"
+                            href="#"
+                            hreflang="id"
+                          >
+                            Indonesia</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_it"
+                            href="#"
+                            hreflang="it-IT"
+                          >
+                            Italiano</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_nl"
+                            href="#"
+                            hreflang="nl"
+                          >
+                            Nederlands</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_jp"
+                            href="#"
+                            hreflang="ja"
+                          >
+                            日本語</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_pl"
+                            href="#"
+                            hreflang="pl"
+                          >
+                            Polski</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_de"
+                            href="#"
+                            hreflang="de-DE"
+                          >
+                            Deutsch</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_vn"
+                            href="#"
+                            hreflang="vi-VN"
+                          >
+                            Tiếng Việt</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_fr"
+                            href="#"
+                            hreflang="fr-FR"
+                          >
+                            Français</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_tr"
+                            href="#"
+                            hreflang="tr-TR"
+                          >
+                            Türkiye</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_kr"
+                            href="#"
+                            hreflang="ko-KR"
+                          >
+                            한국어</a
+                          >
+                        </li>
+                        <li onclick="Redirect.setLangCookie('menu')">
+                          <a
+                            class="flag-icon flag-country flag_country_ms"
+                            href="#"
+                            hreflang="ms-MY"
+                          >
+                            Malaysia</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="h"
+                            id="help_translate"
+                            target="_blank"
+                            href="#"
+                            rel="nofollow"
+                            >Help translate Qub-Store</a
+                          >
+                        </li>
+                      </ul>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav_menu-item">
+              <div class="top-search">
+                <form class="formsearch" method="get" action="/search">
+                  <div class="search-left">
+                    <input
+                      class="autocomplete"
+                      autocomplete="off"
+                      title="Enter App Name, Package Name, Package ID"
+                      name="q"
+                      type="text"
+                      size="40"
+                      placeholder="Search..."
+                      required
+                    />
+                  </div>
+                  <div class="search-right">
+                    <input class="si" type="submit" value="" />
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <li class="nav_menu-item">
+              <a href="javascript:void(0)" class="nav-p"
+                ><img
+                  src="../assets/images/nav_product_icon.png"
+                  style="padding: 0px 0px 7px 0px"
+                />PRODUCTS</a
+              >
+              <ul class="nav_submenu">
+                <li class="nav_submenu-item">
+                  <div class="menu_list">
+                    <div class="menu_body">
+                      <ul>
+                        <li>
+                          <a
+                            class="dl-ref"
+                            dl-ref="nav"
+                            href="../products/QubApp.html">Qub-Store App</a
+                          >
+                        </li>
+                        <li>
+                          <a href="../products/QubInstall.html">Qub Install</a>
+                        </li>
+                        <li>
+                          <a href="../products/QubDownload.html"
+                            >Qub Download</a
+                          >
+                        </li>
+                        <li>
+                          <a href="../products/QubVerification.html"
+                            >Qub Verification</a
+                          >
+                        </li>
+                        <li><a href="#" target="_blank">iPhone APP</a></li>
+                        <li><a href="#" target="_blank">YaksGames</a></li>
+                        <li>
+                          <a href="../products/TencentGamingBuddy.html"
+                            >Tencent Gaming Buddy</a
+                          >
+                        </li>
+                        <li>
+                          <a href="../products/BlueStacksAppPlayer.html"
+                            >BlueStacks App Player</a
+                          >
+                        </li>
+                      </ul>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_menu-item">
+              <a href="javascript:void(0)" class="nav-t"
+                ><img
+                  src="../assets/images/nav_topic_icon.png"
+                  style="padding: 0px 0px 7px 0px"
+                />Topics</a
+              >
+              <ul class="nav_submenu">
+                <li class="nav_submenu-item">
+                  <div class="menu_list">
+                    <div class="menu_body">
+                      <ul>
+                        <li>
+                          <a href="../topics/DiscoverApp.html">Discover App</a>
+                        </li>
+                        <li>
+                          <a href="../topics/EditorChoice.html"
+                            >Editor's Choice</a
+                          >
+                        </li>
+                        <li>
+                          <a href="../topics/Pre-Register.html">Pre-register</a>
+                        </li>
+                        <li>
+                          <a href="../topics/GameOnSales.html">Game on sales</a>
+                        </li>
+                        <li>
+                          <a class="h" href="../topics/MoreTopics.html"
+                            >More Topics</a
+                          >
+                        </li>
+                      </ul>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_menu-item">
+              <a title="hot android app qub" href="../apps.html" class="nav-a"
+                ><img
+                  src="../assets/images/nav_app_icon.png"
+                  style="padding: 0px 0px 7px 0px"
+                />APPS</a
+              >
+            </li>
+            <li class="nav_menu-item">
+              <a title="hot android game qub" href="../games.html" class="nav-g"
+                ><img
+                  src="../assets/images/nav_game_icon.png"
+                  style="padding: 0px 0px 7px 0px"
+                />GAMES</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main" style="margin-top: 20px">
+      <div class="main">
+        <div class="title bread-crumbs" style="margin-bottom: 20px">
+          <a href="../index.html">Home</a> » <span>Discover App</span>
+        </div>
+      </div>
+
+      <div id="discoverId">
+    
+        </div>
+      </div>
+
+      <div class="paging">
+        <ul>
+          <li class="active"><a href="/discover?page=1">1</a></li>
+
+          <li><a href="/discover?page=2">2</a></li>
+
+          <li><a href="/discover?page=3">3</a></li>
+
+          <li><a href="/discover?page=4">4</a></li>
+
+          <li><a href="/discover?page=5">5</a></li>
+
+          <li>...</li>
+
+          <li><a href="/discover?page=621">621</a></li>
+
+          <li><a href="/discover?page=2">&#10095;</a></li>
+        </ul>
+      </div>
+
+      <div class="box cmt-wrap" id="comment">
+        <div class="cmt-container"></div>
+        <div class="cmt-wrong"></div>
+        <div id="cmt-loading-first">
+          <div class="cssload-spin-box"></div>
+          <div class="cmt-loading-text">Comment Loading...</div>
+        </div>
+        <div class="cmt-no-posts">Ooops! No such content!</div>
+      </div>
+    </div>
+
+    <div class="clear" style="height: 0px"></div>
+
+    <div class="share-fixed share-hide">
+      <div class="share-btn share-web">
+        <ul>
+          <li>
+            <a class="share-fb" data-sharer="facebook"
+              ><span class="icon"></span
+            ></a>
+          </li>
+          <li>
+            <a class="share-t" data-sharer="twitter"
+              ><span class="icon"></span
+            ></a>
+          </li>
+          <li>
+            <a class="share-reddit" data-sharer="reddit"
+              ><span class="icon"></span
+            ></a>
+          </li>
+          <li>
+            <a class="share-vk" data-sharer="vk"><span class="icon"></span></a>
+          </li>
+          <li>
+            <a class="share-whatsapp" data-sharer="whatsapp"
+              ><span class="icon"></span
+            ></a>
+          </li>
+          <li>
+            <a class="share-more"><span class="icon"></span></a>
+          </li>
+          <li>
+            <div class="share-side-counter"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      new LazyLoad({
+        elements_selector: ".topic-img,.lazybg",
+        data_src: "original",
+      });
+      var comment_config = {
+        page: {
+          categoryId: "topic-trending",
+          title: document.title,
+          url: location.href,
+        },
+        order: "default",
+        iapi_url: "",
+        template_language: "en",
+      };
+    </script>
+  </body>
+</html>
