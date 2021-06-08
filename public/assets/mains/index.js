@@ -283,18 +283,30 @@ getTrending();
 const allSliders = async () => {
   try {
     const { data } = await axios.get(`${url}/apk/activesliders`);
-    console.log({ papular_apps: data.data });
-    data.data.map((apk, index) => {
-      const image = `
-     <a title="${apk.title}" ><img alt="${apk.title}" src="${url}/img/${apk.image}" width="100%" height="100%"/></a>
-        `;
-      const lis = document.createElement('li');
+    console.log({ activeSliders: data.data });
+    data.data.map((apk) => {
+    //   const image =`
+    //  <a title="${apk.title}" ><img alt="${apk.title}" src="${url}/img/${apk.image}" width="100%" height="100%"/></a>
+    //     `;
+      // const lis = document.createElement('li');
       const title = document.createElement('li');
       title.innerText = apk.title;
       // lis.innerHTML=image;
-      // document.querySelector("#slider_titles").appendChild(title);
+      document.querySelector("#slider_titles").appendChild(title);
       // document.querySelector("#slider_images").appendChild(lis);
     });
+    data.data.map((apk) => {
+        const image =`<a title="${apk.title}" ><img alt="${apk.title}" src="${url}/img/${apk.image}" width="100px" height="100px"/></a>`;
+        const li=`<a title="title="${apk.title}""
+        href="/fish-idle-hooked-tycoon-fishing-boat-hooking/com.greenbuttongames.FishIdle">
+        <img alt="Fish idle: hooked tycoon. Fishing boat, hooking Qub-Store"
+        src="${url}/img/${apk.image}"
+        srcset="https://image.winudf.com/v2/image1/Y29tLmdyZWVuYnV0dG9uZ2FtZXMuRmlzaElkbGVfYmFubmVyXzE2MTIwODA0MTJfMDg3/banner.jpg?w=1700&fakeurl=1 2x" />
+    </a>`
+        const lis = document.createElement('li');
+        lis.innerHTML=li;
+        document.querySelector("#slider_images").appendChild(lis);
+      });
   } catch (error) {
     console.log(error);
   }
@@ -315,7 +327,7 @@ async function popularCates() {
     console.log({ data });
     data.data.map(cate => {
       cate.subCategory.map(subCate => {
-        const lis = `<a class="downs" title="${subCate.name}" ><i class="action"></i>${subCate.name}</a>`;
+        const lis = `<a class="downs" title="${subCate.name}" ><i class="action" style="background: url(${url}/img/${subCate.image}) !important;"></i>${subCate.name}</a>`;
         const li = document.createElement("li");
         li.innerHTML = lis;
         li.querySelector(".downs").addEventListener("click", (e) => {
@@ -323,7 +335,7 @@ async function popularCates() {
           window.location = '/topics/DiscoverApp.html?title=' + e.target.title;
         });
         document.getElementById("popular_cates").appendChild(li);
-      })
+      });
     });
   } catch (error) {
     console.log(error);

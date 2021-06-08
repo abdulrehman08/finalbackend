@@ -62,7 +62,7 @@ const getAllCate = async () => {
           if (cate.category==='Games') {
             
               cate.subCategory.map(subCate=>{
-                const lis = `<a class="downs" title="${subCate.name}" ><i class="action"></i>${subCate.name}</a>`;
+                const lis = `<a class="downs" title="${subCate.name}" ><i class="sports" style="background: url(${url}/img/${subCate.image}) !important;"></i>${subCate.name}</a>`;
         const li = document.createElement("li");
         li.innerHTML = lis;
         li.querySelector(".downs").addEventListener("click", (e) => {
@@ -75,7 +75,7 @@ const getAllCate = async () => {
                 else if (cate.category==='Apps') {
  
                   cate.subCategory.map(subCate=>{
-                    const lis = `<a class="downs" title="${subCate.name}" ><i class="action"></i>${subCate.name}</a>`;
+                    const lis = `<a class="downs" title="${subCate.name}" ><i class="action" style="background: url(${url}/img/${subCate.image}) !important;"></i>${subCate.name}</a>`;
             const li = document.createElement("li");
             li.innerHTML = lis;
             li.querySelector(".downs").addEventListener("click", (e) => {
