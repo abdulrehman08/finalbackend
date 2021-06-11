@@ -8,6 +8,7 @@ const getAPapular = async () => {
     // console.log(apk);
     document.getElementById("d_image").src = `${url}/img/${apk.image}`;
     document.getElementById("d_title").innerHTML = apk.title;
+    // document.getElementById("desc").innerHTML = apk.description;
     document.getElementById("d_text").title = apk.title;
     document.getElementById("d_downloads").innerText = apk.downloads;
     document.getElementById("d_size").innerHTML = apk.title;
@@ -96,7 +97,7 @@ const discoverApps = async () => {
         const currentYear = currentDate.getFullYear();
         const dateString = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
         const lis = ` 
-<a href="" title="${apk.title}">
+<a  href="javascript:void(0)" title="${apk.title}">
 		<div class="app-icon"><img alt="${apk.title}" src="${url}/img/${apk.image}" /></div>
 		<div class="app-text">
 			<p class="app-text-title mt-3 downs" title="${apk.title}">${apk.title}</p>
@@ -134,11 +135,11 @@ const discoverApps = async () => {
             const lis = ` 
       <div class="day_list_number">1</div>
           <dl>
-              <dt><a ><img alt="English" src="${url}/img/${apk.image}" width="100px" height="100px"/></a></dt>
-              <dd class="title-dd"><a title="${apk.title}" >${apk.title}</a></dd>
+              <dt><a  href="javascript:void(0)"><img alt="English" src="${url}/img/${apk.image}" width="100px" height="100px"/></a></dt>
+              <dd class="title-dd"><a  href="javascript:void(0)" title="${apk.title}" >${apk.title}</a></dd>
               <dd>downloads(${apk.downloads})</dd>
               <dd>${dateString}</dd>
-              <dd class="down"><a rel="nofollow" class="downs" title="${apk.title}" href="#">Download</a></dd>
+              <dd class="down"><a   href="javascript:void(0)" rel="nofollow" class="downs" title="${apk.title}" >Download</a></dd>
           </dl>
         `;
 

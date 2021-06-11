@@ -55,14 +55,17 @@ const getMe = async () => {
   }
 };
 const getAllCate = async () => {
+  let gameLimit=0;
+  let appLimit=0;
     try {
       const {data} = await axios.get(`${url}/apk/getallcate`);
       console.log({data});
       data.data.map(cate=>{
           if (cate.category==='Games') {
-            
               cate.subCategory.map(subCate=>{
-                const lis = `<a class="downs" title="${subCate.name}" ><i class="sports" style="background: url(${url}/img/${subCate.image}) !important;"></i>${subCate.name}</a>`;
+                if (gameLimit<8) {
+
+                const lis = `<a  href="javascript:void(0)" class="downs" title="${subCate.name}" ><i  style="background:url(${url}/img/${subCate.image}) ; !important; background-size:cover;"></i>${subCate.name}</a>`;
         const li = document.createElement("li");
         li.innerHTML = lis;
         li.querySelector(".downs").addEventListener("click", (e) => {
@@ -70,12 +73,16 @@ const getAllCate = async () => {
           window.location = '/topics/DiscoverApp.html?title=' + e.target.title;
         });
         document.querySelector(".c_cate_games").appendChild(li);
+        gameLimit=gameLimit+1;
+      }
                   } ) 
-                   }
+                   } 
                 else if (cate.category==='Apps') {
  
                   cate.subCategory.map(subCate=>{
-                    const lis = `<a class="downs" title="${subCate.name}" ><i class="action" style="background: url(${url}/img/${subCate.image}) !important;"></i>${subCate.name}</a>`;
+                    if (appLimit<8) {
+
+                    const lis = `<a  href="javascript:void(0)" class="downs" title="${subCate.name}" ><i  style="background:url(${url}/img/${subCate.image}) ; !important; background-size:cover;"></i>${subCate.name}</a>`;
             const li = document.createElement("li");
             li.innerHTML = lis;
             li.querySelector(".downs").addEventListener("click", (e) => {
@@ -83,6 +90,8 @@ const getAllCate = async () => {
               window.location = '/topics/DiscoverApp.html?title=' + e.target.title;
             });
             document.querySelector(".c_cate_apps").appendChild(li);
+            appLimit=appLimit+1;
+             }
                       } ) 
                              }
       });
@@ -110,10 +119,10 @@ const getAllApks = async () => {
     data.data.map(apk=>{
       if (apk.category==='Games') {
         const lis=` 
-        <div  class="category-template-img" style="border-radius:86%"><a title=${apk.title} target="_blank" ><img alt= ${apk.title}  width="35px" height="35px" class="lazy"  src="${url}/img/${apk.image}"/ ></a></div>
-        <div class="category-template-title"><a target="_blank" title=${apk.title}  >${apk.title} </a></div>
+        <div  class="category-template-img" style="border-radius:86%"><a  href="javascript:void(0)" title=${apk.title} target="_blank" ><img alt= ${apk.title}  width="35px" height="35px" class="lazy"  src="${url}/img/${apk.image}"/ ></a></div>
+        <div class="category-template-title"><a  href="javascript:void(0)" target="_blank" title=${apk.title}  >${apk.title} </a></div>
         <div class="stars" style="margin: 0 auto;"><span class="score" title=" ${apk.title}   rating 8.4" style="width:84.00000000000001%"></span><span class="star">8.4</span></div>
-        <div class="category-template-down "><a rel="nofollow"  title="${apk.title}" href="#" class="downs" >Download</a></div>
+        <div class="category-template-down "><a  href="javascript:void(0)" rel="nofollow"  title="${apk.title}"  class="downs" >Download</a></div>
     `;
    
     const li=document.createElement('li');
@@ -127,10 +136,10 @@ const getAllApks = async () => {
     }
       }else if (apk.category==='Apps') {
          const lis=` 
-        <div  class="category-template-img" style="border-radius:86%"><a title=${apk.title} target="_blank" ><img alt= ${apk.title}  width="35px" height="35px" class="lazy"  src="${url}/img/${apk.image}"/ ></a></div>
-        <div class="category-template-title"><a target="_blank" title=${apk.title}  >${apk.title} </a></div>
+        <div  class="category-template-img" style="border-radius:86%"><a  href="javascript:void(0)" title=${apk.title} target="_blank" ><img alt= ${apk.title}  width="35px" height="35px" class="lazy"  src="${url}/img/${apk.image}"/ ></a></div>
+        <div class="category-template-title"><a  href="javascript:void(0)" target="_blank" title=${apk.title}  >${apk.title} </a></div>
         <div class="stars" style="margin: 0 auto;"><span class="score" title=" ${apk.title}   rating 8.4" style="width:84.00000000000001%"></span><span class="star">8.4</span></div>
-        <div class="category-template-down "><a rel="nofollow"  title="${apk.title}" href="#" class="downs" >Download</a></div>
+        <div class="category-template-down "><a  href="javascript:void(0)" rel="nofollow"  title="${apk.title}"  class="downs" >Download</a></div>
     `;
    
     const li=document.createElement('li');

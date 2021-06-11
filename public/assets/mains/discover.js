@@ -3,7 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const title = params.get("title");
 const getAllApks = async () => {
   let apks;
-  console.log({title});
+  // console.log({title});
     try {
       if (title) {
         if (title==='hot games') {
@@ -14,6 +14,7 @@ const getAllApks = async () => {
           const {data} = await axios.get(`${url}/apk/approved`);
            apks=data.data.filter(apk=>( apk.category==='Apps'&&apk.hot));
         }
+        
         else if (title==="Rhapsody Languages") {
           const {data} = await axios.get(`${url}/apk/approved`);
            apks=data.data.filter(apk=>apk.category==="Rhapsody Languages");
@@ -43,6 +44,7 @@ const getAllApks = async () => {
             <div class="editors_m_1">
               <p>
                 <a
+                href="javascript:void(0)"
                   title="${apk.title}"
                   class="downs"
                   ><img
@@ -64,33 +66,30 @@ const getAllApks = async () => {
             <div class="editors_m_2">
               <h3 class="editors_title">
                 <a
+                href="javascript:void(0)"
                 title="${apk.title}"
                 class="downs"
                   >${apk.title}
-                  <span class="vname">${apk.createdAt.slice(0,10)}</span></a
-                >
+                  <span class="vname">${apk.createdAt.slice(0,10)}</span></a>
               </h3>
               <div class="editors_author">
                 <div class="editors_date" title="Latest Update">
-                  <img src="" width="16" /> ${apk.createdAt.slice(0,10)}
+                   <span >downloads(${apk.downloads})</span>
                 </div>
               </div>
               <div class="editors_text downs" title="${apk.title}" >
-                WELCOME THE CHALLENGEYOUR GATEWAY TO MAGICYou know the name. Now
-                download and play the original strategy card game on your phone.
-                Unlock powerful decks right away, earn rewards just by playing,
-                and jump into action with a variety of game formats for
+              ${ apk.description }
               </div>
-  
               <div class="tag_wrap ">
                 <ul class="tag_list">
-                  <li><a >Card</a></li>
+                  <li><a  href="javascript:void(0)" >Card</a></li>
                 </ul>
               </div>
             </div>
   
             <div class="editors_m_3">
               <a
+              href="javascript:void(0)"
                 title="${apk.title}"
                 ><img
                   src="${url}/img/${apk.images[0]}"
