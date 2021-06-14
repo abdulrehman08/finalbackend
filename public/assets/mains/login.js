@@ -30,6 +30,7 @@ if (login) {
           var expiresIn = new Date(new Date().getTime()+(5*24*60*60*1000));
           document.cookie = `jwt=${token}; expires=${expiresIn}; path=/`  
           // window.location.replace("https://admin.qub-store.com/dashboard");
+          window.location.replace("/profilesetting.html");
         },
         (error) => {
           alert("Incorrect username or password");
@@ -68,10 +69,14 @@ if (sings) {
           // window.location.replace("https://admin.qub-store.com/dashboard");
           const token=response.data.token
           console.log(token);
-         console.log(parseJwt(token));
+          const user=parseJwt(token);
+          localStorage.setItem("token", token);
+          localStorage.setItem("test","token");
+          localStorage.setItem("token",token)
+         console.log(user);
           var expiresIn = new Date(new Date().getTime()+(5*24*60*60*1000));
           document.cookie = `jwt=${token}; expires=${expiresIn}; path=/`  
-          window.location.replace("https://admin.qub-store.com/dashboard");
+          // window.location.replace("https://admin.qub-store.com/dashboard");
         },
         (error) => {
           alert("Incorrect username or password");
@@ -80,4 +85,9 @@ if (sings) {
       );
   });
 }
-console.log("raftar");
+// console.log("raftar");
+function logged(){
+console.log(localStorage.getItem("user"));
+console.log(document.cookie);
+}
+logged();

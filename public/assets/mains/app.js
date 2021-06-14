@@ -141,7 +141,6 @@ const getAllApks = async () => {
         <div class="stars" style="margin: 0 auto;"><span class="score" title=" ${apk.title}   rating 8.4" style="width:84.00000000000001%"></span><span class="star">8.4</span></div>
         <div class="category-template-down "><a  href="javascript:void(0)" rel="nofollow"  title="${apk.title}"  class="downs" >Download</a></div>
     `;
-   
     const li=document.createElement('li');
     li.innerHTML=lis;
     li.querySelector('.downs').addEventListener('click',(e)=>{

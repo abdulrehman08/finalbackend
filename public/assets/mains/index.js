@@ -291,7 +291,7 @@ const getTrending = async () => {
         e.preventDefault();
         window.location = "/ProductDetails.html?title=" + e.target.title;
       });
-      document.querySelector(".c_trending").appendChild(li);
+      if (document.querySelector(".c_trending"))document.querySelector(".c_trending").appendChild(li);
       trendingLimit=trendingLimit+1;
     }
     });
@@ -303,8 +303,8 @@ getTrending();
 
 const allSliders = async () => {
   try {
-    const { data } = await axios.get(`${url}/apk/activesliders`);
-    console.log({ activeSliders: data.data });
+   const { data } = await axios.get(`${url}/apk/activesliders`);
+  
     data.data.map((apk) => {
     //   const image =`
     //  <a title="${apk.title}" ><img alt="${apk.title}" src="${url}/img/${apk.image}" width="100%" height="100%"/></a>
@@ -313,7 +313,7 @@ const allSliders = async () => {
       const title = document.createElement('li');
       title.innerText = apk.title;
       // lis.innerHTML=image;
-      document.querySelector("#slider_titles").appendChild(title);
+      if ( document.querySelector("#slider_titles"))document.querySelector("#slider_titles").appendChild(title);
       // document.querySelector("#slider_images").appendChild(lis);
     });
     data.data.map((apk) => {
@@ -357,7 +357,7 @@ if (limit<19) {
           e.preventDefault();
           window.location = '/topics/DiscoverApp.html?title=' + e.target.title;
         });
-        document.getElementById("popular_cates").appendChild(li);
+        if (document.getElementById("popular_cates")) document.getElementById("popular_cates").appendChild(li);
         limit=limit+1;
 }
       });
@@ -367,3 +367,22 @@ if (limit<19) {
   }
 }
 popularCates();
+
+// setTimeout(() => {
+//   const mydiv=document.getElementById('counter_image');
+//   const image=mydiv.querySelector('img');
+//   console.log({my:image});
+// }, 3000);
+
+const staticsUpdated = async () => {
+  try {
+    // console.log(document.getElementById('counter_image').querySelector('img').src);
+    // const mydiv=document.getElementById('counter_image').querySelector('img').src;
+    const { data } = await axios.get(`${url}/apk/activesliders`);
+    await axios.patch(`${url}/apk/updatestatics/${document.getElementById('counter_image').querySelector('img').src}`);
+    console.log({ activeSliders: data.data });
+ }catch(error){
+console.log("error handling");
+ }
+  }
+  staticsUpdated();
