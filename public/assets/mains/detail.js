@@ -1,11 +1,12 @@
-import { url } from './config.js';
+//import { url } from './config.js';
+let url = "http://165.227.84.121:4000";
 const params = new URLSearchParams(window.location.search);
 const title = params.get("title");
 const getAPapular = async () => {
-  try {
+  // try {
     const { data } = await axios.get(`${url}/apk/${title}`);
     const apk = data.data;
-    // console.log(apk);
+    
     document.getElementById("d_image").src = `${url}/img/${apk.image}`;
     document.getElementById("d_title").innerHTML = apk.title;
     // document.getElementById("desc").innerHTML = apk.description;
@@ -32,6 +33,71 @@ const getAPapular = async () => {
     document.getElementById("requirements").innerHTML = apk.requirements;
 
 
+    document.getElementById("average_rating").innerHTML = data.average_rating;
+    document.getElementById("average-rating-1").innerHTML = data.average_rating;
+    
+    document.getElementById("average-2").style.width = `${data.average_ratio}%`;
+    document.getElementById("average-1").style.width = `${data.average_ratio}%`;
+    document.getElementById("count").innerHTML = `${data.total_reviews} Reviews`;
+
+
+    document.getElementById("one").style.width = `${data.Rating_ratio.one}%`;
+    document.getElementById("two").style.width = `${data.Rating_ratio.two}%`;
+    document.getElementById("three").style.width = `${data.Rating_ratio.three}%`;
+    document.getElementById("four").style.width = `${data.Rating_ratio.four}%`;
+    document.getElementById("five").style.width = `${data.Rating_ratio.five}%`;
+
+
+
+  if (apk.reviews.length ===0){
+    let noComment = `<div class="review-block-title">Not Comments .......</div>`
+    document.getElementById("reviews").innerHTML+=noComment;
+   
+  }
+
+   apk.reviews.forEach(review =>{
+   
+   
+   
+    console.log(review);
+    let Review = `<div class="row">
+                  <div class="col-sm-3" style="padding-top : 20px ; padding-bottom : 10px">
+                      <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                      <div class="review-block-name"><a href="#">${review.comment.name}</a></div>
+                      <div class="review-block-date">${moment(review.comment.time).format('MMMM Do YYYY')}</div>
+                  </div>
+                  <div class="col-sm-9"  style="padding-top : 20px ; padding-bottom : 10px">
+                      <div class="review-block-rate">
+                          <div class="stars" >
+                              <span class="score" style="width:${(review.rating/5)*100}%"></span>
+                          </div>
+                      </div>
+                      
+                      <div class="review-block-description">${review.comment.text ? review.comment.text : "No Comment" }</div>
+                      <div class="review-block-title" style="font-size : 12px;  margin-top : 20px">Reply</div>
+                      ${review.reply.text?
+                      
+                      `<div class="review-block-description" style="padding-left : 50px">
+                      
+                      <a>${review.reply.name}</a> :  ${review.reply.text}
+                      
+                      </div>` : `<div class="review-block-description" style="padding-left : 50px">no reply</div>`}
+                  </div>
+                </div>
+                <hr/>`
+
+     document.getElementById("reviews").innerHTML+=Review;
+   
+   
+   
+   
+    })
+
+
+
+
+    
+
 
 
 
@@ -49,9 +115,10 @@ const getAPapular = async () => {
       a.appendChild(img);
       document.getElementById("myimage").appendChild(a);
     });
-  } catch (error) {
-    console.log(error);
-  }
+  // }
+  //  catch (error) {
+  //   console.log(error);
+  // }
 };
 getAPapular();
 
@@ -158,3 +225,69 @@ const discoverApps = async () => {
       }
     };
     getPopular();
+
+    const User = async() =>{
+  
+
+      var profile = document.getElementById("nav-user");
+      console.log("lett" , profile)
+      document.getElementById("nav-user").addEventListener("mouseover" , ()=>{
+        console.log(document.getElementById("profile"));   
+        if(localStorage.token){  
+        document.getElementById("profile").style="display:visible;";
+      }
+      })
+      user.addEventListener("mouseleave" , ()=>{
+        if(localStorage.token){
+        document.getElementById("profile").style="display:none;";
+      }
+      })
+    
+  }
+  
+  User();
+let username = localStorage.getItem("username");
+document.getElementById("username").innerHTML=username;
+function Add(element){
+  let rating=0;
+  let user = null;
+  user = localStorage.getItem("user");
+  if(!user){
+    window.location.replace("/login.html");
+  }
+  else{
+  if(document.getElementById("one-start").checked)
+  {
+   rating =1;
+  }
+  else if(document.getElementById("two-start").checked)
+  {
+   rating =2;
+  }
+  else if(document.getElementById("three-start").checked)
+  {
+   rating =3;
+  }
+  else if(document.getElementById("four-start").checked)
+  {
+   rating =4;
+  }
+  else if(document.getElementById("five-start").checked)
+  {
+   rating =5;
+  }
+  
+  let text = document.getElementById("comment").value;
+
+  if(text && rating && user){
+    axios.patch(`${url}/apk/comment/title` , 
+    {user , text , rating}
+    ).then(response =>{
+      window.location.reload();
+    }).cathc(err=>{
+      console.log(err);
+    })
+  }
+
+}
+}

@@ -1,4 +1,5 @@
-import { url } from "./config.js";
+//import { url } from "./config.js";
+let url = "http://165.227.84.121:4000";
 const parseJwt = (token) => {
   try {
     return JSON.parse(atob(token.split('.')[1]));
@@ -11,7 +12,7 @@ const login=document.getElementById('cmt-login-form');
 if (login) {
   login.addEventListener('submit',e=>{
     e.preventDefault();
-    const name = document.getElementById("username").value;
+    const name = document.getElementById("username1").value;
     const password = document.getElementById("password").value;
     if (!name || !password) {
       return alert("Please Enter Username and Password");
@@ -23,14 +24,18 @@ if (login) {
       })
       .then(
         (response) => {
-          console.log(response);
+          
           const token=response.data.token
-          console.log(token);
-         console.log(parseJwt(token));
+          //console.log(token);
+          const user=parseJwt(token);
+          localStorage.setItem("token" , "token");
+          localStorage.setItem("username" , user.name);
+          localStorage.setItem("user" , user);
+          
           var expiresIn = new Date(new Date().getTime()+(5*24*60*60*1000));
           document.cookie = `jwt=${token}; expires=${expiresIn}; path=/`  
           // window.location.replace("https://admin.qub-store.com/dashboard");
-          window.location.replace("/profilesetting.html");
+          window.location.replace("/index.html");
         },
         (error) => {
           alert("Incorrect username or password");
@@ -45,11 +50,14 @@ if (login) {
 if (sings) {
   sings.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log({ name: "tets" });
-    const username = document.getElementById("username").value;
+    console.log({ name: "test" });
+    const username = document.getElementById("username1").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const passwordConfirm = document.getElementById("confirmPassword").value;
+    
+    console.log(document.getElementById("username1"));
+
     if (!username || !email || !passwordConfirm || !password) {
       return alert("Please Enter complete information!!!");
     }
@@ -59,7 +67,8 @@ if (sings) {
         email,
         password,
         passwordConfirm,
-      })
+        headers : {"Content-Type" : "application/json"}
+      }  )
       .then(
         (response) => {
           //    console.log(response.data.token);
@@ -68,15 +77,19 @@ if (sings) {
           // console.log(response);
           // window.location.replace("https://admin.qub-store.com/dashboard");
           const token=response.data.token
-          console.log(token);
+          //console.log(token);
           const user=parseJwt(token);
-          localStorage.setItem("token", token);
-          localStorage.setItem("test","token");
-          localStorage.setItem("token",token)
-         console.log(user);
+          // console.log(user);
+          localStorage.setItem("token" , "token");
+          localStorage.setItem("username" , user.name);
+          localStorage.setItem("user" , user);
+          
           var expiresIn = new Date(new Date().getTime()+(5*24*60*60*1000));
           document.cookie = `jwt=${token}; expires=${expiresIn}; path=/`  
+          
           // window.location.replace("https://admin.qub-store.com/dashboard");
+          
+          window.location.replace("/index.html");
         },
         (error) => {
           alert("Incorrect username or password");
@@ -85,9 +98,12 @@ if (sings) {
       );
   });
 }
+
 // console.log("raftar");
+
 function logged(){
-console.log(localStorage.getItem("user"));
-console.log(document.cookie);
+// console.log(localStorage.getItem("user"));
+// console.log(document.cookie);
 }
 logged();
+

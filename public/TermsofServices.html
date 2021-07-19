@@ -6,6 +6,23 @@
     <link rel="stylesheet" href="assetsrmsofservices.css" />
        <link rel="shortcut icon" href="assets/favicon.PNG"/>    
     <script src="assetsmsofservices.js" type="text/javascript"></script>   
+    <script>
+        var url = "http://165.227.84.121:4000";
+        function Profile(){
+            if(localStorage.token){
+               window.location.replace("/profilesetting.html");
+            }
+            else{
+               window.location.replace("/login.html");
+            }
+          }
+          function logout(){
+        document.cookie = `jwt=;` 
+        localStorage.clear();
+        window.location.replace("/index.html");
+        }
+    
+        </script>
     <link rel="stylesheet" type="text/css" href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css" />
  
 </head>
@@ -14,15 +31,43 @@
     <div class="header">
         <div class="head">
             <div class="logo" style="position: relative;">
-                <a title="Qub-Store" href="Home.html"><img alt="Qub-Store" src="assets/logonew.png" height="60" /></a>
+                <a title="Qub Store" href="Home.html"><img alt="Qub Store" src="assets/logonew.png" height="60" /></a>
             </div>
             <div class="top-menu">
                 <ul class="nav_menu">
                     
-                    <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
-                        <a class="nav-l"  href="login.html"><img width="30" height="30"
-                            id="nav-user-img" 
-                         src="assets/images/no_login_v1.png"></a>
+                    <li class="nav_menu-item on" id="nav-user" >
+                        <a class="nav-l" onclick="Profile()"><img width="30" height="30" id="nav-user-img"
+                                src="assets/images/no_login_v1.png"></a>
+                    
+                            <div id = "profile" style="display: none;">
+                                <ul class="nav_submenu nav_submenu-r" id="nav-logout">
+                                    <li class="nav_submenu-item">
+                                        <div class="menu_list">
+                                            <div>
+                                                <ul>
+                                                    <li>
+                                                        <div class="nav-user-info">
+                                                            <a class="logout" onclick="logout()" rel="nofollow">Logout</a>
+                                                              <div>
+                                                                 <div>
+                                                                     <a href="/profilesetting.html">
+                                                                        <img width="60" height="60" src="https://static.apkpure.com/www/static/imgs/no_login_v1.png">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="nav-user-name">
+                                                                    <a href="/profileseting.html" id="username"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
                     </li>
                     
                     <li class="nav_menu-item locale-change"><a href="javascript:void(0)"
@@ -54,7 +99,7 @@
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tr" href="#" hreflang="tr-TR"> Türkiye</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_kr" href="#" hreflang="ko-KR"> 한국어</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ms" href="#" hreflang="ms-MY"> Malaysia</a></li>
-                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub-Store</a></li>
+                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub Store</a></li>
                                             </ul>
                                         <div class="clear"></div>
                                     </div>
@@ -80,7 +125,7 @@
                                 <div class="menu_list">
                                     <div class="menu_body">
                                     <ul>
-                                        <li><a class="dl-ref" dl-ref="nav" href="products/QubApp.html">Qub-Store App</a></li>
+                                        <li><a class="dl-ref" dl-ref="nav" href="products/QubApp.html">Qub Store App</a></li>
                                         <li><a href="products/QubInstall.html">Qub Install</a></li>
                                         <li><a href="products/QubDownload.html">Qub Download</a></li>
                                         <li><a href="products/QubVerification.html">Qub Verification</a></li>
@@ -154,11 +199,11 @@
 
                 
                 
-<li class="R_more"><a title="PUBG MOBILE - KARAKIN Qub-Store" href="/pubg-mobile-4-android-i/com.tencent.ig"><img alt="PUBG MOBILE - KARAKIN" srcset="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdfaWNvbl8xNjA1NTExODU4XzA4OA/icon.png?w=60&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdfaWNvbl8xNjA1NTExODU4XzA4OA/icon.png?w=30&amp;fakeurl=1">PUBG MOBILE - KARAKIN </a></li>
+<li class="R_more"><a title="PUBG MOBILE - KARAKIN Qub Store" href="/pubg-mobile-4-android-i/com.tencent.ig"><img alt="PUBG MOBILE - KARAKIN" srcset="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdfaWNvbl8xNjA1NTExODU4XzA4OA/icon.png?w=60&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLnRlbmNlbnQuaWdfaWNvbl8xNjA1NTExODU4XzA4OA/icon.png?w=30&amp;fakeurl=1">PUBG MOBILE - KARAKIN </a></li>
 
-<li class="R_more"><a title="PUBG MOBILE KR Qub-Store" href="/pubg-mobile/com.pubg.krmobile"><img alt="PUBG MOBILE KR Qub-Store" srcset="https://image.winudf.com/v2/image1/Y29tLnB1Ymcua3Jtb2JpbGVfaWNvbl8xNjE1MjgwMjk0XzAzMA/icon.png?w=60&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLnB1Ymcua3Jtb2JpbGVfaWNvbl8xNjE1MjgwMjk0XzAzMA/icon.png?w=30&amp;fakeurl=1">PUBG MOBILE KR</a></li>
+<li class="R_more"><a title="PUBG MOBILE KR Qub Store" href="/pubg-mobile/com.pubg.krmobile"><img alt="PUBG MOBILE KR Qub Store" srcset="https://image.winudf.com/v2/image1/Y29tLnB1Ymcua3Jtb2JpbGVfaWNvbl8xNjE1MjgwMjk0XzAzMA/icon.png?w=60&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLnB1Ymcua3Jtb2JpbGVfaWNvbl8xNjE1MjgwMjk0XzAzMA/icon.png?w=30&amp;fakeurl=1">PUBG MOBILE KR</a></li>
 
-<li class="R_more"><a title="Among Us Qub-Store" href="/among-us/com.innersloth.spacemafia"><img alt="Among Us Qub-Store" srcset="https://image.winudf.com/v2/image1/Y29tLmlubmVyc2xvdGguc3BhY2VtYWZpYV9pY29uXzE1NTQ5MzY1NjJfMDEz/icon.png?w=60&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLmlubmVyc2xvdGguc3BhY2VtYWZpYV9pY29uXzE1NTQ5MzY1NjJfMDEz/icon.png?w=30&amp;fakeurl=1">Among Us</a></li>
+<li class="R_more"><a title="Among Us Qub Store" href="/among-us/com.innersloth.spacemafia"><img alt="Among Us Qub Store" srcset="https://image.winudf.com/v2/image1/Y29tLmlubmVyc2xvdGguc3BhY2VtYWZpYV9pY29uXzE1NTQ5MzY1NjJfMDEz/icon.png?w=60&amp;fakeurl=1 2x" src="https://image.winudf.com/v2/image1/Y29tLmlubmVyc2xvdGguc3BhY2VtYWZpYV9pY29uXzE1NTQ5MzY1NjJfMDEz/icon.png?w=30&amp;fakeurl=1">Among Us</a></li>
 
             </ul>
             <div class="clear"></div>
@@ -169,9 +214,9 @@
         <div class="box">
     <div class="title bread-crumbs"><a href="Home.html">Home</a> » <span>Permissions</span></div>
     <div class="pure-ui pure-min">
-        <h1>Qub-Store Terms of Service</h1><br>
+        <h1>Qub Store Terms of Service</h1><br>
         <p>Last modified: Jan 01, 2021</p>
-        <h2>Welcome to Qub-Store!</h2><br>
+        <h2>Welcome to Qub Store!</h2><br>
         
     </div>
     <div class="clear"></div>
@@ -224,7 +269,7 @@
         </div>
     </div>
     <div class="copyright">
-        Copyright © 2021-2022 Qub-Store All rights reserved.
+        Copyright © 2021-2022 Qub Store All rights reserved.
         | <a href="#" rel="nofollow">DMCA Disclaimer</a>
         | <a href="#">Privacy Policy</a>
         | <a href="#" rel="nofollow">Term of Use</a>

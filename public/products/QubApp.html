@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Qub-Store App | Qub-Store</title>
+    <title>Qub Store App | Qub Store</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/product css/qubapp.css">
        <link rel="shortcut icon" href="../assets/images/favicon.PNG"/>
     <script src="../assets/js/product js/qubapp.js"></script>
+    <script>
+        var url = "http://165.227.84.121:4000";
+        function Profile(){
+            if(localStorage.token){
+               window.location.replace("/profilesetting.html");
+            }
+            else{
+               window.location.replace("/login.html");
+            }
+          }
+          function logout(){
+        document.cookie = `jwt=;` 
+        localStorage.clear();
+        window.location.replace("/index.html");
+        }
+        </script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" defer></script>
+       
     <link rel="stylesheet" type="text/css" href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css" />
 
 </head>
@@ -13,15 +31,42 @@
     <div class="header">
         <div class="head">
             <div class="logo" style="position: relative;">
-                <a title="Qub-Store" href="../Home.html"><img alt="Qub-Store" src="../assets/images/logonew.png" height="60" /></a>
+                <a title="Qub Store" href="../Home.html"><img alt="Qub Store" src="../assets/images/logonew.png" height="60" /></a>
             </div>
             <div class="top-menu">
                 <ul class="nav_menu">
                     
-                    <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
-                        <a class="nav-l"  href="../login.html"><img width="30" height="30"
+                    <li class="nav_menu-item on" id="nav-user" >
+                        <a class="nav-l"  onclick="Profile()"><img width="30" height="30"
                             id="nav-user-img" 
                          src="../assets/images/no_login_v1.png"></a>
+                         <div id = "profile" style="display: none;">
+                            <ul class="nav_submenu nav_submenu-r" id="nav-logout">
+                                <li class="nav_submenu-item">
+                                    <div class="menu_list">
+                                        <div>
+                                            <ul>
+                                                <li>
+                                                    <div class="nav-user-info">
+                                                        <a class="logout" onclick="logout()" rel="nofollow">Logout</a>
+                                                          <div>
+                                                             <div>
+                                                                 <a href="/profilesetting.html">
+                                                                    <img width="60" height="60" src="https://static.apkpure.com/www/static/imgs/no_login_v1.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="nav-user-name">
+                                                                <a href="/profileseting.html" id="username"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     
                     <li class="nav_menu-item locale-change"><a href="javascript:void(0)"
@@ -53,7 +98,7 @@
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tr" href="#" hreflang="tr-TR"> Türkiye</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_kr" href="#" hreflang="ko-KR"> 한국어</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ms" href="#" hreflang="ms-MY"> Malaysia</a></li>
-                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub-Store</a></li>
+                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub Store</a></li>
                                             </ul>
                                     <div class="clear"></div>
                                 </div>
@@ -79,7 +124,7 @@
                             <div class="menu_list">
                                 <div class="menu_body">
                                     <ul>
-                                        <li><a class="dl-ref" dl-ref="nav" href="../products/QubApp.html">Qub-Store App</a></li>
+                                        <li><a class="dl-ref" dl-ref="nav" href="../products/QubApp.html">Qub Store App</a></li>
                                         <li><a href="../products/QubInstall.html">Qub Install</a></li>
                                         <li><a href="../products/QubDownload.html">Qub Download</a></li>
                                         <li><a href="../products/QubVerification.html">Qub Verification</a></li>
@@ -125,9 +170,9 @@
     
     <div class="apkpure_banner_text">
         <div><img src="../assets/images/QubStore_banner_bg_right_v3_1.png" alt="" style=" position: absolute; top: 25px; left: 450px; height: 35rem; width: 43rem;"></div>
-        <img class="logo_image" alt="Qub-Store Icon" src="../assets/images/favicon.PNG" width="100px" />
+        <img class="logo_image" alt="Qub Store Icon" src="../assets/images/favicon.PNG" width="100px" />
         <div class="apkpure_des_ver">
-            <h1>Qub-Store App</h1>
+            <h1>Qub Store App</h1>
             <p>Enjoy the newest apps</p>
         </div>
         <div class="apkpure_down">
@@ -143,23 +188,23 @@
 <div class="apkpure_f_01">
     <div class="apkpure_f_01_text">
         <div class="apkpure_f_01_title">
-            <h2>Qub-Store Features</h2>
-            <p>(Qub-Store Downloader) App is officially released! With Qub-Store, you can instantly download and update region locked (not available in your country), pre-registered games and many other Apps on Android.</p>
+            <h2>Qub Store Features</h2>
+            <p>(Qub Store Downloader) App is officially released! With Qub Store, you can instantly download and update region locked (not available in your country), pre-registered games and many other Apps on Android.</p>
         </div>
         <div class="apkpure_f_01_text_left">
             <img src="../assets/images/aegon_v3_ico_1.png" alt="Region-locked Free">
             <div>No Region Locking</div>
-            <p>Qub-Store offers a selection of the best Android games and apps which you can not even find them in Play Store search results. No region lock worries. Download and play now for free.</p>
+            <p>Qub Store offers a selection of the best Android games and apps which you can not even find them in Play Store search results. No region lock worries. Download and play now for free.</p>
         </div>
         <div class="apkpure_f_01_text_left">
             <img src="../assets/images/aegon_v3_ico_2.png" alt="Safe Downloading">
             <div>Safe Downloading</div>
-            <p>All Apps in the Qub-Store are safe for your Android phone to download. They have to pass a signature verification check before they are listed in APKPure.</p>
+            <p>All Apps in the Qub Store are safe for your Android phone to download. They have to pass a signature verification check before they are listed in APKPure.</p>
         </div>
         <div class="apkpure_f_01_text_left">
             <img src="../assets/images/aegon_v3_ico_3.png" alt="Multi-language Supported">
             <div>Multi-language Supported</div>
-            <p>Qub-Store mobile App supports the following languages: English (US), Chinese, Japanese, Korean, Arabic, German, French, Spanish, Portuguese, etc.</p>
+            <p>Qub Store mobile App supports the following languages: English (US), Chinese, Japanese, Korean, Arabic, German, French, Spanish, Portuguese, etc.</p>
         </div>
         <div class="apkpure_f_01_text_left">
             <img src="../assets/images/aegon_v3_ico_4.png" alt="Pause & Resume">
@@ -170,7 +215,7 @@
 </div>
 <div class="apkpure_f">
     <div class="apkpure_f_main">
-        <img class="right_img" alt="Qub-Store Icon" src="../assets/images/aegon_v3_image_001.jpg"/>
+        <img class="right_img" alt="Qub Store Icon" src="../assets/images/aegon_v3_image_001.jpg"/>
         <div class="apkpure_f_main_text float_right">
             <p class="title_text">Best Games<br/>Recommendations Every Day</p>
             <p>Get the best games with our editors' and users' recommendations every day. You'll never miss any fresh out and trending Android games.</p>
@@ -180,17 +225,17 @@
 </div>
 <div class="apkpure_f height_600 bg_white">
     <div class="apkpure_f_main">
-        <img class="rotate_rigth_12 left_img" alt="Qub-Store Icon" src="../assets/images/aegon_v3_image_002.jpg"/>
+        <img class="rotate_rigth_12 left_img" alt="Qub Store Icon" src="../assets/images/aegon_v3_image_002.jpg"/>
         <div class="apkpure_f_main_text float_left">
             <p class="title_text">Join Our Community!</p>
-            <p>Share geeky, fun things in our community fun with hashtags, stories and more new features in Qub-Store App version 3.0. Find Android geeks like you and connect with them.</p>
+            <p>Share geeky, fun things in our community fun with hashtags, stories and more new features in Qub Store App version 3.0. Find Android geeks like you and connect with them.</p>
             <p class="apkpure_f_down_a"><a class="apkpure_download_a" rel="nofollow" href=" ">Download APP</a></p>
         </div>
     </div>
 </div>
 <div class="apkpure_f height_600">
     <div class="apkpure_f_main">
-        <img class="right_img" alt="Qub-Store Icon" src="../assets/images/aegon_v3_image_003.jpg" style="top:35px;"/>
+        <img class="right_img" alt="Qub Store Icon" src="../assets/images/aegon_v3_image_003.jpg" style="top:35px;"/>
         <div class="apkpure_f_main_text float_right">
             <p class="title_text">A Better Place to<br />Download & Update Apps</p>
             <p>Grab the Apps that you can not even find in Play Store search results. Discover new Android games and experience exciting adventures with APKPure now.</p>
@@ -200,40 +245,40 @@
 </div>
 <div class="apkpure_f height_600 bg_white">
     <div class="apkpure_f_main">
-        <img class="rotate_left_12" alt="Qub-Store Icon" src="../assets/images/aegon_v3_image_004.jpg" style="position:absolute; top:45px; left:55%;"/>
+        <img class="rotate_left_12" alt="Qub Store Icon" src="../assets/images/aegon_v3_image_004.jpg" style="position:absolute; top:45px; left:55%;"/>
         <div class="apkpure_f_main_text float_left">
             <p class="title_text">Lightweight but More Powerful <br />Android App Downloader</p>
-            <p>Qub-Store App is a collection of self-contained, easy to install App management tools for Android OS Ice Cream Sandwich 4.1 or higher, including   Installer, App & APK Management, APK Downloader and more.</p>
+            <p>Qub Store App is a collection of self-contained, easy to install App management tools for Android OS Ice Cream Sandwich 4.1 or higher, including   Installer, App & APK Management, APK Downloader and more.</p>
             <p class="apkpure_f_down_a"><a class="apkpure_download_a" rel="nofollow" href="">Download App</a></p>
         </div>
     </div>
 </div>
 <div class="apkpure_f height_600">
     <div class="apkpure_f_main">
-        <img class="rotate_rigth_12 right_img" alt="Qub-Store Icon" src="../assets/images/aegon_v3_image_005.jpg"/>
+        <img class="rotate_rigth_12 right_img" alt="Qub Store Icon" src="../assets/images/aegon_v3_image_005.jpg"/>
         <div class="apkpure_f_main_text float_right">
-            <p class="title_text">One-click Install Free<br />Qub-Store &   of Games and Apps</p>
-            <p>Install any free Android game Qub-Store or   files with a single click. We make them stay up to date all the time. As soon as APKPure is installed, you have nothing to worry about.</p>
+            <p class="title_text">One-click Install Free<br />Qub Store &   of Games and Apps</p>
+            <p>Install any free Android game Qub Store or   files with a single click. We make them stay up to date all the time. As soon as APKPure is installed, you have nothing to worry about.</p>
             <p class="apkpure_f_down_a"><a class="apkpure_download_a" rel="nofollow" href=" ">Download APP</a></p>
         </div>
     </div>
 </div>
 <div class="apkpure_f height_600 bg_white">
     <div class="apkpure_f_main">
-        <img alt="Qub-Store Icon" src="../assets/images/aegon_v3_image_006.jpg" style="position:absolute; top:30px; left:55%;"/>
+        <img alt="Qub Store Icon" src="../assets/images/aegon_v3_image_006.jpg" style="position:absolute; top:30px; left:55%;"/>
         <div class="apkpure_f_main_text float_left">
             <p class="title_text">Customize Android<br />More Easily</p>
-            <p>Qub-Store makes it easier for you to download, update your favorite games like PUBG, Fortnite, Free Fire, and Apps like WhatsApp, Facebook, Instagram, Youtube.</p>
+            <p>Qub Store makes it easier for you to download, update your favorite games like PUBG, Fortnite, Free Fire, and Apps like WhatsApp, Facebook, Instagram, Youtube.</p>
             <p class="apkpure_f_down_a"><a class="apkpure_download_a" rel="nofollow" href="">Download APP</a></p>
         </div>
     </div>
 </div>
 <div class="apkpure_f height_500">
     <div class="apkpure_f_main">
-        <img alt="Qub-Store Icon" src="../assets/images/aegon_v3_image_007.jpg" style="position:absolute; top:65px; right:55%;"/>
+        <img alt="Qub Store Icon" src="../assets/images/aegon_v3_image_007.jpg" style="position:absolute; top:65px; right:55%;"/>
         <div class="apkpure_f_main_text float_right" style="padding-top: 85px;">
             <p class="title_text">Never Costs Too Much<br/>Battery Life</p>
-            <p>We believe applications should be as lightweight as possible. To keep your device running smoothly, the small-size Qub-Store App means long battery life and less storage occupation. APKPure can take advantage of high-performance devices as well as optimize for low-end devices. No flashy interactions. No unnecessary features.</p>
+            <p>We believe applications should be as lightweight as possible. To keep your device running smoothly, the small-size Qub Store App means long battery life and less storage occupation. APKPure can take advantage of high-performance devices as well as optimize for low-end devices. No flashy interactions. No unnecessary features.</p>
             <p class="apkpure_f_down_a"><a class="apkpure_download_a" rel="nofollow" href="">Download APP</a></p>
         </div>
     </div>
@@ -285,13 +330,13 @@
         </div>
     </div>
     <div class="copyright">
-        Copyright © 2021-2022 Qub-Store All rights reserved.
+        Copyright © 2021-2022 Qub Store All rights reserved.
         | <a href="#" rel="nofollow">DMCA Disclaimer</a>
         | <a href="#">Privacy Policy</a>
         | <a href="#" rel="nofollow">Term of Use</a>
       
     </div>
 </div>
-
+<script src = "../assets/mains/header.js"></script>
 </body>
 </html>

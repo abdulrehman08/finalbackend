@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Qub Verification| Qub-Store</title>
+    <title>Qub Verification| Qub Store</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/product css/qubverification.css">
        <link rel="shortcut icon" href="../assets/images/favicon.PNG"/>
     <script src="../assets/js/product js/qubverification.js"></script>
+    <!-- <script src = "assets/mains/header.js"></script> -->
+
+    <script>
+        var url = "http://165.227.84.121:4000";
+        function Profile(){
+            if(localStorage.token){
+               window.location.replace("/profilesetting.html");
+            }
+            else{
+               window.location.replace("/login.html");
+            }
+          }
+          function logout(){
+        document.cookie = `jwt=;` 
+        localStorage.clear();
+        window.location.replace("/index.html");
+        }
+    
+        </script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" defer></script>
+       
     <link rel="stylesheet" type="text/css" href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css" />
     
         
@@ -17,15 +38,42 @@
     <div class="header">
         <div class="head">
             <div class="logo" style="position: relative;">
-                <a title="Qub-Store" href="../Home.html"><img alt="Qub-Store" src="../assets/images/logonew.png" height="60" /></a>
+                <a title="Qub Store" href="../Home.html"><img alt="Qub Store" src="../assets/images/logonew.png" height="60" /></a>
             </div>
             <div class="top-menu">
                 <ul class="nav_menu">
                     
-                    <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
-                        <a class="nav-l"  href="../login.html"><img width="30" height="30"
+                    <li class="nav_menu-item on" id="nav-user" >
+                        <a class="nav-l"  onclick="Profile()"><img width="30" height="30"
                             id="nav-user-img" 
                          src="../assets/images/no_login_v1.png"></a>
+                         <div id = "profile" style="display: none;">
+                            <ul class="nav_submenu nav_submenu-r" id="nav-logout">
+                                <li class="nav_submenu-item">
+                                    <div class="menu_list">
+                                        <div>
+                                            <ul>
+                                                <li>
+                                                    <div class="nav-user-info">
+                                                        <a class="logout" onclick="logout()" rel="nofollow">Logout</a>
+                                                          <div>
+                                                             <div>
+                                                                 <a href="/profilesetting.html">
+                                                                    <img width="60" height="60" src="https://static.apkpure.com/www/static/imgs/no_login_v1.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="nav-user-name">
+                                                                <a href="/profileseting.html" id="username"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     
                     <li class="nav_menu-item locale-change"><a href="javascript:void(0)"
@@ -57,7 +105,7 @@
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tr" href="#" hreflang="tr-TR"> Türkiye</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_kr" href="#" hreflang="ko-KR"> 한국어</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ms" href="#" hreflang="ms-MY"> Malaysia</a></li>
-                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub-Store</a></li>
+                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub Store</a></li>
                                             </ul>
                                     <div class="clear"></div>
                                 </div>
@@ -83,7 +131,7 @@
                             <div class="menu_list">
                                 <div class="menu_body">
                                  <ul>
-                                        <li><a class="dl-ref" dl-ref="nav" href="../products/QubApp.html">Qub-Store App</a></li>
+                                        <li><a class="dl-ref" dl-ref="nav" href="../products/QubApp.html">Qub Store App</a></li>
                                         <li><a href="../products/QubInstall.html">Qub Install</a></li>
                                         <li><a href="../products/QubDownload.html">Qub Download</a></li>
                                         <li><a href="../products/QubVerification.html">Qub Verification</a></li>
@@ -130,7 +178,7 @@
             <img src="../assets/images/icon-verified_v2.png" width="24">
             Signature Verification Online
         </div>
-        <div id="info">Click Upload Qub-Store file</div>
+        <div id="info">Click Upload Qub Store file</div>
         <div class="uploadify">
             <input id="file_upload" class="file" type="file" name="file" accept="">
             <div id="file_upload-button" class="uploadify-button" style="height: 140px; line-height: 140px; width: 140px;"></div>
@@ -148,7 +196,7 @@
             </div>
         </div>
         <div class="info2">
-            Qub-Store Signature verification will verify Android app package signature to keep Android users away from potentially harmful Qub-Store files before Qub-Store installing.
+            Qub Store Signature verification will verify Android app package signature to keep Android users away from potentially harmful Qub Store files before Qub Store installing.
             <div style="margin: 10px auto 0 auto; text-align: center; height: 32px;"><div class="share_button_toolbox share-hide">
     <div class="share-btn share-toolbox">
         <a class="share-fb" data-sharer="facebook"><span class="icon"></span></a>
@@ -220,7 +268,7 @@
         </div>
     </div>
     <div class="copyright">
-        Copyright © 2021-2022 Qub-Store All rights reserved.
+        Copyright © 2021-2022 Qub Store All rights reserved.
         | <a href="#" rel="nofollow">DMCA Disclaimer</a>
         | <a href="#">Privacy Policy</a>
         | <a href="#" rel="nofollow">Term of Use</a>
@@ -255,6 +303,7 @@
         </ul>
     </div>
 </div>
+<script src = "../assets/mains/header.js"></script>
 
 </body>
 </html>

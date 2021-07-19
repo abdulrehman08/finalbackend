@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Discover App | Qub-Store</title>
+    <title>Discover App | Qub Store</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -18,27 +18,69 @@
       type="text/css"
       href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css"
     />
+    <script>
+      var url = "http://165.227.84.121:4000";
+      function Profile(){
+          if(localStorage.token){
+             window.location.replace("/profilesetting.html");
+          }
+          else{
+             window.location.replace("/login.html");
+          }
+        }
+        function logout(){
+        document.cookie = `jwt=;` 
+        localStorage.clear();
+        window.location.replace("/index.html");
+        }
+  
+      </script>
   </head>
   <body>
     <div class="header">
       <div class="head">
         <div class="logo" style="position: relative">
-          <a title="Qub-Store" href="../index.html"
+          <a title="Qub Store" href="../index.html"
             ><img
-              alt="Qub-Store"
+              alt="Qub Store"
               src="../assets/images/logonew.png" height="60"/></a>
         </div>
         <div class="top-menu">
           <ul class="nav_menu">
-            <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
-              <a class="nav-l" href="../login.html"
-                ><img
-                  width="30"
-                  height="30"
-                  id="nav-user-img"
-                  src="../assets/images/no_login_v1.png"
-              /></a>
-            </li>
+            
+            
+            <li class="nav_menu-item on" id="nav-user" >
+              <a class="nav-l"  onclick="Profile()"><img width="30" height="30"
+                  id="nav-user-img" 
+               src="../assets/images/no_login_v1.png"></a>
+               <div id = "profile" style="display: none;">
+                  <ul class="nav_submenu nav_submenu-r" id="nav-logout">
+                      <li class="nav_submenu-item">
+                          <div class="menu_list">
+                              <div>
+                                  <ul>
+                                      <li>
+                                          <div class="nav-user-info">
+                                              <a class="logout" onclick="logout()" rel="nofollow">Logout</a>
+                                                <div>
+                                                   <div>
+                                                       <a href="/profilesetting.html">
+                                                          <img width="60" height="60" src="https://static.apkpure.com/www/static/imgs/no_login_v1.png">
+                                                      </a>
+                                                  </div>
+                                                  <div class="nav-user-name">
+                                                      <a href="/profileseting.html" id="username"></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </li>
 
             <li class="nav_menu-item locale-change">
               <a
@@ -231,7 +273,7 @@
                             target="_blank"
                             href="#"
                             rel="nofollow"
-                            >Help translate Qub-Store</a
+                            >Help translate Qub Store</a
                           >
                         </li>
                       </ul>
@@ -280,7 +322,7 @@
                           <a
                             class="dl-ref"
                             dl-ref="nav"
-                            href="../products/QubApp.html">Qub-Store App</a
+                            href="../products/QubApp.html">Qub Store App</a
                           >
                         </li>
                         <li>
@@ -471,5 +513,7 @@
         template_language: "en",
       };
     </script>
+    <!-- <script src = "../assets/mains/header.js"></script> -->
+
   </body>
 </html>

@@ -2,10 +2,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Qub Install | Qub-Store</title>
+    <title>Qub Install | Qub Store</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/product css/qubinstall.css">
        <link rel="shortcut icon" href="../assets/images/favicon.PNG"/>
     <script src="../assets/js/product js/qubinstall.js"></script>
+    <!-- <script src = "assets/mains/header.js"></script> -->
+
+    <script>
+        var url = "http://165.227.84.121:4000";
+        function Profile(){
+            if(localStorage.token){
+               window.location.replace("/profilesetting.html");
+            }
+            else{
+               window.location.replace("/login.html");
+            }
+          }
+          function logout(){
+        document.cookie = `jwt=;` 
+        localStorage.clear();
+        window.location.replace("/index.html");
+        }
+        </script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" defer></script>
+       
     <link rel="stylesheet" type="text/css" href="https://cdnpure.com/static/share-button/css/share-button.1.1.0.min.css" />
 
 </head>
@@ -15,15 +35,42 @@
     <div class="header">
         <div class="head">
             <div class="logo" style="position: relative;">
-                <a title="Qub-Store" href="../Home.html"><img alt="Qub-Store" src="../assets/images/logonew.png" height="60" /></a>
+                <a title="Qub Store" href="../Home.html"><img alt="Qub Store" src="../assets/images/logonew.png" height="60" /></a>
             </div>
             <div class="top-menu">
                 <ul class="nav_menu">
                     
-                    <li class="nav_menu-item on" id="nav-user" data-ref="login.html">
-                        <a class="nav-l"  href="../login.html"><img width="30" height="30"
+                    <li class="nav_menu-item on" id="nav-user" >
+                        <a class="nav-l"  onclick="Profile()"><img width="30" height="30"
                             id="nav-user-img" 
                          src="../assets/images/no_login_v1.png"></a>
+                         <div id = "profile" style="display: none;">
+                            <ul class="nav_submenu nav_submenu-r" id="nav-logout">
+                                <li class="nav_submenu-item">
+                                    <div class="menu_list">
+                                        <div>
+                                            <ul>
+                                                <li>
+                                                    <div class="nav-user-info">
+                                                        <a class="logout" onclick="logout()" rel="nofollow">Logout</a>
+                                                          <div>
+                                                             <div>
+                                                                 <a href="/profilesetting.html">
+                                                                    <img width="60" height="60" src="https://static.apkpure.com/www/static/imgs/no_login_v1.png">
+                                                                </a>
+                                                            </div>
+                                                            <div class="nav-user-name">
+                                                                <a href="/profileseting.html" id="username"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     
                     <li class="nav_menu-item locale-change"><a href="javascript:void(0)"
@@ -55,7 +102,7 @@
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_tr" href="#" hreflang="tr-TR"> Türkiye</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_kr" href="#" hreflang="ko-KR"> 한국어</a></li>
                                             <li onclick="Redirect.setLangCookie('menu')"><a class="flag-icon flag-country flag_country_ms" href="#" hreflang="ms-MY"> Malaysia</a></li>
-                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub-Store</a></li>
+                                            <li><a class="h" id="help_translate" target="_blank" href="#" rel="nofollow">Help translate Qub Store</a></li>
                                             </ul>
                                     <div class="clear"></div>
                                 </div>
@@ -81,7 +128,7 @@
                             <div class="menu_list">
                                 <div class="menu_body">
                                  <ul>
-                                        <li><a class="dl-ref" dl-ref="nav" href="../products/QubApp.html">Qub-Store App</a></li>
+                                        <li><a class="dl-ref" dl-ref="nav" href="../products/QubApp.html">Qub Store App</a></li>
                                         <li><a href="../products/QubInstall.html">Qub Install</a></li>
                                         <li><a href="../products/QubDownload.html">Qub Download</a></li>
                                         <li><a href="../products/QubVerification.html">Qub Verification</a></li>
@@ -126,15 +173,15 @@
 <div class="cp-banner">
     <div class="main">
         <img src="../assets/images/cp-icon.png" />
-        <h1>Qub-Store Install</h1>
-        <p>Qub-Store Install is an Qub-Store installer software for Android, developed by Qub-Store team. With this Qub-Store installation tool you can easily install Qub-Store games and apps from PC to Android phone or tablet. It would take just one click. It is simple.</p>
+        <h1>Qub Store Install</h1>
+        <p>Qub Store Install is an Qub Store installer software for Android, developed by Qub Store team. With this Qub Store installation tool you can easily install Qub Store games and apps from PC to Android phone or tablet. It would take just one click. It is simple.</p>
         <p><a class="axpak" target="_blank" href="/ .html">What is   file, How to install?</a></p>
         <div class="down">
-            <a href="#" title="Qub-Store Install Download for Windows" class="ga" ga="Qub-Store-install|download|local" style="margin-right:20px; ">Download Now<br><span>1.4 for Windows</span><i><img src="../assets/images/cp-down-win.png" /></i></a>
-            <a class="dl-ref" dl-ref="Qub-Store-install" href="#" title="Qub-Store Install Download for Android">Download Now<br><span> for Android</span><i><img src="../assets/images/cp-down-android.png" /></i></a>
+            <a href="#" title="Qub Store Install Download for Windows" class="ga" ga="Qub Store-install|download|local" style="margin-right:20px; ">Download Now<br><span>1.4 for Windows</span><i><img src="../assets/images/cp-down-win.png" /></i></a>
+            <a class="dl-ref" dl-ref="Qub Store-install" href="#" title="Qub Store Install Download for Android">Download Now<br><span> for Android</span><i><img src="../assets/images/cp-down-android.png" /></i></a>
         </div>
         <div class="other_down">
-            <a href="#" target="_blank" title="Download on CNET" class="cp-cnet-down ga" ga="Qub-Store-install|download|cnet">Download on CNET for Windows</a>
+            <a href="#" target="_blank" title="Download on CNET" class="cp-cnet-down ga" ga="Qub Store-install|download|cnet">Download on CNET for Windows</a>
         </div>
     </div>
 </div>
@@ -142,19 +189,19 @@
     <div class="box-cp">
         <div class="">
             <img src="../assets/images/box-cp-tu1.jpg" />
-            <p>One click install Qub-Store package and OBB asset files to Android.</p>
+            <p>One click install Qub Store package and OBB asset files to Android.</p>
         </div>
     </div>
     <div class="box-cp">
         <div class="">
             <img src="../assets/images/box-cp-tu2.jpg" />
-            <p>Support all Android brand cellphone Qub-Store installing.(Samsung, HTC, Motorola, Huawei, LG, Lenovo, Mi, Micromax, etc).</p>
+            <p>Support all Android brand cellphone Qub Store installing.(Samsung, HTC, Motorola, Huawei, LG, Lenovo, Mi, Micromax, etc).</p>
         </div>
     </div>
     <div class="box-cp">
         <div class="">
             <img src="../assets/images/box-cp-tu3.jpg" />
-            <p>Qub-Store Installer works perfectly with Windows 8.1, Windows 8, Windows 7(32/64bit), Windows XP.</p>
+            <p>Qub Store Installer works perfectly with Windows 8.1, Windows 8, Windows 7(32/64bit), Windows XP.</p>
         </div>
     </div>
     <div class="box-cp">
@@ -172,7 +219,7 @@
     <div class="box-cp">
         <div class="">
             <img src="../assets/images/imgsbox-cp-tu6.png" />
-            <p>100% Qub-Store verified safe</p>
+            <p>100% Qub Store verified safe</p>
         </div>
     </div>
     <div class="clear"></div>
@@ -181,20 +228,20 @@
     <h2>Frequently Asked Questions</h2>
     <ul>
         <li>
-            <h3>Why Pure Qub-Store Install?</h3>
-            <p>Qub-Store is a downloadable,  file installing application, that you can install on your Windows PC. We are working to support more Amazon Kindle and Blackberry 10 devices.</p>
+            <h3>Why Pure Qub Store Install?</h3>
+            <p>Qub Store is a downloadable,  file installing application, that you can install on your Windows PC. We are working to support more Amazon Kindle and Blackberry 10 devices.</p>
             <h3>What is   file?</h3>
-            <p>  is a brand new file format standard for Android Qub-Store file. Contains all Qub-Store package and obb cache asset file to keep Android games or apps working, it always ends in ". ". <a href="/ .html" title=" ">Learn More>></a></p>
+            <p>  is a brand new file format standard for Android Qub Store file. Contains all Qub Store package and obb cache asset file to keep Android games or apps working, it always ends in ". ". <a href="/ .html" title=" ">Learn More>></a></p>
             <h3>How to fix device connected problem?</h3>
             <p>If the Android device can't be connected, please follow the steps below to resolve the issue. Unplug your phone from computer, change another USB cable or USB port, redownload <a href="###" title="Download USB Driver">USB Driver</a> and enable <a href="/usb-debugging.html" title="USB Debugging">USB Debugging</a> on the device.</p>
         </li>
         <li style="float:right;">
-            <h3>How does Pure Qub-Store Install work?</h3>
-            <p>Qub-Store Install just answered everything you want to know about Qub-Store installation. Download and install the software, drag and drop Android .Qub-Store, select install button to continue. Done! </p>
-            <h3>Where to download .Qub-Store or .  file?</h3>
-            <p><b>Qub-Stores.com</b> is the right place to download the latest Android™ apps and games Qub-Store and  , including favorites like Minecraft – Pocket Edition, Facebook, BBM and Clash of Clans.</p>
+            <h3>How does Pure Qub Store Install work?</h3>
+            <p>Qub Store Install just answered everything you want to know about Qub Store installation. Download and install the software, drag and drop Android .Qub Store, select install button to continue. Done! </p>
+            <h3>Where to download .Qub Store or .  file?</h3>
+            <p><b>Qub Stores.com</b> is the right place to download the latest Android™ apps and games Qub Store and  , including favorites like Minecraft – Pocket Edition, Facebook, BBM and Clash of Clans.</p>
             <h3>How can i report a bug?</h3>
-            <p>Please submit bugs to us by clicking on the "Submit Feedback" button on the top-right of the Pure Qub-Store Install window.</p>
+            <p>Please submit bugs to us by clicking on the "Submit Feedback" button on the top-right of the Pure Qub Store Install window.</p>
         </li>
     </ul>
 </div>
@@ -244,7 +291,7 @@
         </div>
     </div>
     <div class="copyright">
-        Copyright © 2021-2022 Qub-Store All rights reserved.
+        Copyright © 2021-2022 Qub Store All rights reserved.
         | <a href="#" rel="nofollow">DMCA Disclaimer</a>
         | <a href="#">Privacy Policy</a>
         | <a href="#" rel="nofollow">Term of Use</a>
@@ -279,6 +326,7 @@
         </ul>
     </div>
 </div>
+<script src = "../assets/mains/header.js"></script>
 
 </body>
 </html>
